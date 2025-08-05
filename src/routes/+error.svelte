@@ -33,7 +33,9 @@
 		</div>
 
 		<div class="flex flex-col gap-8 text-center md:text-left">
-			<h1 class="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] bg-clip-text text-5xl leading-tight font-bold text-transparent lg:text-6xl">
+			<h1
+				class="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] bg-clip-text text-5xl leading-tight font-bold text-transparent lg:text-6xl"
+			>
 				{$langStore.errorPage.errorPageTitle}
 			</h1>
 
@@ -56,7 +58,7 @@
 				</a>
 				<a
 					href="/ajuda"
-					class="rounded-md border-2 border-[var(--color-secondary)] px-8 py-4 font-medium transition-all text-[var(--color-secondary)] hover:scale-105 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+					class="rounded-md border-2 border-[var(--color-secondary)] px-8 py-4 font-medium text-[var(--color-secondary)] transition-all hover:scale-105 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
 				>
 					{$langStore.errorPage.errorPageButtonHelp}
 				</a>

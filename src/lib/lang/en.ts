@@ -50,6 +50,21 @@ export const en = {
 		mainPageText8: 'Shows detailed statistics about your favorite songs and artists',
 		mainPageText9: 'Helps you discover new music and artists that match your style'
 	},
+	statisticsPage: {
+		title: 'Statistics | Allify',
+		notLoggedInText: 'Log in to access your statistics',
+		notLoggedInDiv: 'Select a platform to continue'
+	},
+	suggestionsPage: {
+		title: 'Suggestions | Allify',
+		notLoggedInText: 'Log in to access your personalized suggestions',
+		notLoggedInDiv: 'Select a platform to continue'
+	},
+	competitionsPage: {
+		title: 'Competitions | Allify',
+		notLoggedInText: 'Log in to access or create competitions',
+		notLoggedInDiv: 'Select a platform to continue'
+	},
 	errorPage: {
 		title: 'Something went wrong... | Allify',
 		description: 'The page you are trying to access does not exist or has been removed.',
