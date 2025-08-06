@@ -22,3 +22,7 @@
 		display: none;
 	}
 }
+
+button[aria-expanded] {
+	@apply cursor-pointer;
+}

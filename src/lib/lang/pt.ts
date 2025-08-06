@@ -65,6 +65,34 @@ export const pt = {
 		notLoggedInText: 'Faça login para acessar ou criar competições',
 		notLoggedInDiv: 'Selecione uma plataforma para continuar'
 	},
+	faq: {
+		title: 'Perguntas Frequentes | Allify',
+		faqText1: 'Perguntas Frequentes',
+		faqItem1: 'O que é o Allify?',
+		faqItem1Text:
+			'O Allify é uma plataforma que transforma seus hábitos musicais em dados visuais e sugestões personalizadas. Ele analisa suas músicas, artistas e gêneros favoritos, oferecendo uma visão única do seu gosto musical.',
+		faqItem2: 'Preciso fazer login para usar?',
+		faqItem2Text:
+			'Sim. Você precisa estar logado para visualizar suas estatísticas, receber sugestões e participar de competições. O Allify utiliza a autenticação OAuth para garantir a segurança dos seus dados.',
+		faqItem3: 'Quais plataformas são compatíveis?',
+		faqItem3Text:
+			'O Allify é compatível com os principais serviços de streaming: Spotify, Apple Music e Deezer.',
+		faqItem4: 'Quem é o Alli?',
+		faqItem4Text:
+			'O Alli é o mascote do Allify. Ele é uma carinha simpática que representa a nossa paixão por música e dados. O Alli te guia por toda a experiência do Allify, ajudando você a explorar suas estatísticas e sugestões de forma divertida e interativa.',
+		faqItem5: 'O que são as competições?',
+		faqItem5Text:
+			'As competições permitem que você compare seu tempo de escuta de um artista com o de outros usuários, assim criando rankings.',
+		faqItem6: 'Meus dados estão seguros?',
+		faqItem6Text:
+			'Sim. Levamos a privacidade a sério. Você pode consultar nossa Política de Privacidade e os Termos de Serviço para saber mais sobre como tratamos seus dados.',
+		faqItem7: 'Quanto custa o Allify?',
+		faqItem7Text:
+			'Atualmente, o Allify oferece acesso gratuito às funcionalidades principais. Em breve, teremos planos premium com recursos avançados.',
+		faqItem8: 'Ainda tenho dúvidas, como posso entrar em contato?',
+		faqItem8Text:
+			'Se você ainda tiver dúvidas, pode entrar em contato conosco através do nosso formulário de contato na página de contato. Estamos aqui para ajudar!'
+	},
 	errorPage: {
 		title: 'Algo deu errado... | Allify',
 		description: 'A página que você está tentando acessar não existe ou foi removida.',
