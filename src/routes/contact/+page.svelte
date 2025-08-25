@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { isEmail } from 'validator';
+	import validator from 'validator';
+	const { isEmail } = validator;
 
 	import Toast from '$lib/components/Toast.svelte';
 
@@ -35,6 +36,7 @@
 		}
 	};
 </script>
+
 
 <svelte:head>
 	<title>{$langStore.contact.title}</title>
