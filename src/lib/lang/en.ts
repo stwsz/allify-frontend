@@ -66,33 +66,51 @@ export const en = {
 		notLoggedInDiv: 'Select a platform to continue'
 	},
 	faq: {
-	title: 'Frequently Asked Questions | Allify',
-	faqText1: 'Frequently Asked Questions',
-	faqItem1: 'What is Allify?',
-	faqItem1Text:
-		'Allify is a platform that turns your music habits into visual data and personalized suggestions. It analyzes your favorite songs, artists, and genres, offering a unique view of your musical taste.',
-	faqItem2: 'Do I need to log in to use it?',
-	faqItem2Text:
-		'Yes. You need to be logged in to view your stats, receive suggestions, and participate in competitions. Allify uses OAuth authentication to ensure your data is secure.',
-	faqItem3: 'Which platforms are supported?',
-	faqItem3Text:
-		'Allify supports the main streaming services: Spotify, Apple Music, and Deezer.',
-	faqItem4: 'Who is Alli?',
-	faqItem4Text:
-		'Alli is Allify’s mascot. He’s a friendly face that represents our love for music and data. Alli guides you through the Allify experience, helping you explore your stats and suggestions in a fun and interactive way.',
-	faqItem5: 'What are the competitions?',
-	faqItem5Text:
-		'Competitions allow you to compare your listening time for an artist with other users, creating rankings.',
-	faqItem6: 'Is my data safe?',
-	faqItem6Text:
-		'Yes. We take privacy seriously. You can check our Privacy Policy and Terms of Service to learn more about how we handle your data.',
-	faqItem7: 'How much does Allify cost?',
-	faqItem7Text:
-		'Currently, Allify offers free access to its core features. Premium plans with advanced features are coming soon.',
-	faqItem8: 'I still have questions. How can I get in touch?',
-	faqItem8Text:
-		'If you still have questions, feel free to contact us through the contact form on our contact page. We’re here to help!'
-},
+		title: 'Frequently Asked Questions | Allify',
+		faqText1: 'Frequently Asked Questions',
+		faqItem1: 'What is Allify?',
+		faqItem1Text:
+			'Allify is a platform that turns your music habits into visual data and personalized suggestions. It analyzes your favorite songs, artists, and genres, offering a unique view of your musical taste.',
+		faqItem2: 'Do I need to log in to use it?',
+		faqItem2Text:
+			'Yes. You need to be logged in to view your stats, receive suggestions, and participate in competitions. Allify uses OAuth authentication to ensure your data is secure.',
+		faqItem3: 'Which platforms are supported?',
+		faqItem3Text: 'Allify supports the main streaming services: Spotify, Apple Music, and Deezer.',
+		faqItem4: 'Who is Alli?',
+		faqItem4Text:
+			'Alli is Allify’s mascot. He’s a friendly face that represents our love for music and data. Alli guides you through the Allify experience, helping you explore your stats and suggestions in a fun and interactive way.',
+		faqItem5: 'What are the competitions?',
+		faqItem5Text:
+			'Competitions allow you to compare your listening time for an artist with other users, creating rankings.',
+		faqItem6: 'Is my data safe?',
+		faqItem6Text:
+			'Yes. We take privacy seriously. You can check our Privacy Policy and Terms of Service to learn more about how we handle your data.',
+		faqItem7: 'How much does Allify cost?',
+		faqItem7Text:
+			'Currently, Allify offers free access to its core features. Premium plans with advanced features are coming soon.',
+		faqItem8: 'I still have questions. How can I get in touch?',
+		faqItem8Text:
+			'If you still have questions, feel free to contact us through the contact form on our contact page. We’re here to help!'
+	},
+	contact: {
+		title: 'Contact Us | Allify',
+		text1: 'Get in touch',
+		label1: 'Your name',
+		placeholder1: 'Enter your name',
+		label2: 'Your email',
+		placeholder2: 'Enter your email',
+		label3: 'Message',
+		placeholder3: 'How can we help you? Write your message here...',
+		button: 'Send',
+		alliShowContactForm: 'Alli showing the contact form',
+		errorText1: 'Please enter a valid name (at least 2 characters).',
+		errorText2: 'Please enter a valid email address.',
+		errorText3: 'Please enter a valid message (at least 5 characters).',
+		toastSuccessMessage: 'Message sent successfully! We will reply shortly.',
+		toastErrorMessage:
+			'Error sending the message. Please review the information and try again later.',
+		toastErrorMessage2: 'Error sending the message. Please try again later.'
+	},
 	errorPage: {
 		title: 'Something went wrong... | Allify',
 		description: 'The page you are trying to access does not exist or has been removed.',

@@ -59,7 +59,7 @@
 						>
 					</li>
 					<li>
-						<a href="/contato" class="transition-all hover:underline"
+						<a href="/contact" class="transition-all hover:underline"
 							>{$langStore.general.footerSection1Item6}</a
 						>
 					</li>

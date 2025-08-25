@@ -1,17 +1,21 @@
 <script lang="ts">
-	import { AccordionItem, Accordion } from "flowbite-svelte";
+	import { AccordionItem, Accordion } from 'flowbite-svelte';
 
-    import { langStore } from "$lib/stores/language.store";
+	import { langStore } from '$lib/stores/language.store';
 </script>
 
 <svelte:head>
-    <title>
-        {$langStore.faq.title}
-    </title>
+	<title>
+		{$langStore.faq.title}
+	</title>
 </svelte:head>
 
-<main class="flex flex-col gap-10 bg-[var(--color-light)] px-6 py-8 md:px-12 md:pb-20 md:pt-14 lg:px-30">
-	<h1 class="text-[var(--color-secondary)] text-xl leading-tight font-bold lg:text-4xl max-w-[680px]">
+<main
+	class="flex flex-col gap-4 bg-[var(--color-light)] px-6 pt-10 pb-14 md:gap-10 md:px-12 md:pt-14 md:pb-20 lg:px-30"
+>
+	<h1
+		class="max-w-[680px] text-xl leading-tight font-bold text-[var(--color-secondary)] lg:text-4xl"
+	>
 		{$langStore.faq.faqText1}
 	</h1>
 
@@ -39,7 +43,7 @@
 
 		<AccordionItem>
 			{#snippet header()}
-            {$langStore.faq.faqItem4}{/snippet}
+				{$langStore.faq.faqItem4}{/snippet}
 			<p class="mb-2 text-gray-700">
 				{$langStore.faq.faqItem4Text}
 			</p>
@@ -69,9 +73,8 @@
 		<AccordionItem>
 			{#snippet header()}{$langStore.faq.faqItem8}{/snippet}
 			<p class="mb-2 text-gray-700">
-				{$langStore.faq.faqItem8Text}
+				{@html $langStore.faq.faqItem8Text}
 			</p>
 		</AccordionItem>
 	</Accordion>
 </main>
-

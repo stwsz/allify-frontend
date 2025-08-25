@@ -2,7 +2,7 @@
 	import AppleMusicIcon from '$lib/assets/images/icons/AppleMusicIcon.svelte';
 	import SpotifyIcon from '$lib/assets/images/icons/SpotifyIcon.svelte';
 	import DeezerIcon from '$lib/assets/images/icons/DeezerIcon.svelte';
-	
+
 	import { langStore } from '$lib/stores/language.store';
 	import { userStore } from '$lib/stores/user.store';
 </script>

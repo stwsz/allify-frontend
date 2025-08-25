@@ -91,7 +91,26 @@ export const pt = {
 			'Atualmente, o Allify oferece acesso gratuito às funcionalidades principais. Em breve, teremos planos premium com recursos avançados.',
 		faqItem8: 'Ainda tenho dúvidas, como posso entrar em contato?',
 		faqItem8Text:
-			'Se você ainda tiver dúvidas, pode entrar em contato conosco através do nosso formulário de contato na página de contato. Estamos aqui para ajudar!'
+			'Se você ainda tiver dúvidas, pode entrar em contato conosco através do nosso formulário de contato na página de <a href="/contact" class="underline text-[var(--color-secondary)]">contato</a>. Estamos aqui para ajudar!'
+	},
+	contact: {
+		title: 'Fale Conosco | Allify',
+		text1: 'Fale conosco',
+		label1: 'Seu nome',
+		placeholder1: 'Digite seu nome',
+		label2: 'Seu e-mail',
+		placeholder2: 'Digite seu e-mail',
+		label3: 'Mensagem',
+		placeholder3: 'Como podemos te ajudar? Escreva sua mensagem aqui...',
+		button: 'Enviar',
+		alliShowContactForm: 'Alli mostrando o formulário de contato',
+		errorText1: 'Por favor, informe um nome válido (mínimo 2 caracteres).',
+		errorText2: 'Por favor, informe um e-mail válido.',
+		errorText3: 'Por favor, informe uma mensagem válida (mínimo 5 caracteres).',
+		toastSuccessMessage: 'Mensagem enviada com sucesso! Responderemos em breve.',
+		toastErrorMessage:
+			'Erro ao enviar a mensagem. Por favor, revise as informações e tente novamente mais tarde.',
+		toastErrorMessage2: 'Erro ao enviar a mensagem. Por favor, tente novamente mais tarde.'
 	},
 	errorPage: {
 		title: 'Algo deu errado... | Allify',
