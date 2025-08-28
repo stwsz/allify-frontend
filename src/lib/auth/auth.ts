@@ -6,14 +6,17 @@ export const isAuthenticated = writable(false);
 export const user = writable<any>(null);
 export const isLoading = writable(true);
 
+function getRedirectUri() {
+	return window.location.origin + '/authentication';
+}
+
 export async function initAuth() {
 	try {
 		const client = await createAuth0Client({
 			domain: import.meta.env.VITE_AUTH0_DOMAIN,
 			clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,
 			authorizationParams: {
-				redirect_uri: window.location.origin + '/authentication',
-				prompt: 'login'
+				redirect_uri: getRedirectUri()
 			},
 			cacheLocation: 'localstorage'
 		});
@@ -29,12 +32,14 @@ export async function initAuth() {
 				const result = await client.handleRedirectCallback();
 				window.history.replaceState({}, document.title, '/');
 			} catch (callbackError) {
+				console.error('Callback error:', callbackError);
 				window.history.replaceState({}, document.title, '/');
 			}
 		}
 
 		await checkAuthStatus(client);
 	} catch (error) {
+		console.error('Auth initialization error:', error);
 	} finally {
 		isLoading.set(false);
 	}
@@ -52,12 +57,14 @@ async function checkAuthStatus(client: Auth0Client) {
 			try {
 				const token = await client.getTokenSilently();
 			} catch (tokenError) {
+				console.error('Token error:', tokenError);
 				await logout();
 			}
 		} else {
 			user.set(null);
 		}
 	} catch (error) {
+		console.error('Auth status check error:', error);
 		isAuthenticated.set(false);
 		user.set(null);
 	}
@@ -70,7 +77,7 @@ export function loginWithProvider(connection: string) {
 		client.loginWithRedirect({
 			authorizationParams: {
 				connection: connection,
-				redirect_uri: window.location.origin + '/authentication'
+				redirect_uri: getRedirectUri()
 			}
 		});
 	}
@@ -98,6 +105,7 @@ export async function getAccessToken() {
 		try {
 			return await client.getTokenSilently();
 		} catch (error) {
+			console.error('Get token error:', error);
 			return null;
 		}
 	}
