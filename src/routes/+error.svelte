@@ -57,7 +57,7 @@
 					{$langStore.errorPage.errorPageButton}
 				</a>
 				<a
-					href="/ajuda"
+					href="/contact"
 					class="rounded-md border-2 border-[var(--color-secondary)] px-8 py-4 font-medium text-[var(--color-secondary)] transition-all hover:scale-105 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
 				>
 					{$langStore.errorPage.errorPageButtonHelp}

@@ -20,7 +20,10 @@ export const pt = {
 		footerSection2Item1: 'Política de Privacidade',
 		footerSection2Item2: 'Termos de Serviço',
 		footerSection2Item3: 'Uso de Dados',
-		footerCopyright: 'Allify. Todos os direitos reservados.'
+		footerCopyright: 'Allify. Todos os direitos reservados.',
+		goodMorning: 'Bom dia',
+		goodAfternoon: 'Boa tarde',
+		goodEvening: 'Boa noite'
 	},
 	mainPage: {
 		title: 'Seu som, sua análise | Allify',
@@ -33,6 +36,10 @@ export const pt = {
 		twitterTitle: 'Seu som, sua análise | Allify',
 		twitterDescription:
 			'Visualize seus hábitos musicais com estatísticas e recomendações inteligentes. O Allify transforma sua forma de ouvir música.',
+		mainPageSpotifyDescription:
+			'O Spotify é a plataforma de música mais popular do mundo. Com milhões de músicas e podcasts, ele oferece recomendações personalizadas e playlists para todos os gostos. Disponível em versão gratuita com anúncios ou premium sem interrupções.',
+		mainPageDeezerDescription:
+			'O Deezer é um serviço de streaming com vasto catálogo musical. Seu recurso Flow cria mixagens personalizadas automaticamente. Oferece boa qualidade de áudio e está disponível em versão gratuita ou premium.',
 		mainPageText1: 'Transforme sua forma de ouvir música',
 		mainPageText2:
 			'Nós somos apaixonados por dados musicais. O Allify te ajuda a descobrir padrões, explorar seu gosto e se conectar com o que realmente te move.',
@@ -40,9 +47,8 @@ export const pt = {
 		mainPageAltText1: 'Alli sentado com fones de ouvido ouvindo música',
 		mainPageText4: 'Integração com os principais serviços de streaming',
 		mainPageAltText2: 'Logo do Spotify',
-		mainPageAltText3: 'Logo da Apple Music',
-		mainPageAltText4: 'Logo do Deezer',
-		mainPageAltText5: 'Alli com fones de ouvido acenando',
+		mainPageAltText3: 'Logo do Deezer',
+		mainPageAltText4: 'Alli com fones de ouvido acenando',
 		mainPageText5: 'Conheça o Alli, seu guia musical',
 		mainPageText6:
 			'O Alli é mais que uma carinha simpática. Ele é seu guia pessoal, te acompanhando por cada descoberta musical e ajudando você a explorar novos horizontes sonoros.',
@@ -53,17 +59,21 @@ export const pt = {
 	statisticsPage: {
 		title: 'Estatísticas | Allify',
 		notLoggedInText: 'Faça login para acessar suas estatísticas',
-		notLoggedInDiv: 'Selecione uma plataforma para continuar'
+		notLoggedInDiv: 'Selecione uma plataforma para continuar',
+		loggedText1: 'Aqui estão suas métricas do '
 	},
 	suggestionsPage: {
 		title: 'Sugestões | Allify',
 		notLoggedInText: 'Faça login para acessar suas sugestões',
-		notLoggedInDiv: 'Selecione uma plataforma para continuar'
+		notLoggedInDiv: 'Selecione uma plataforma para continuar',
+		loggedText1:
+			'Preparamos algumas sugestões de novos artistas e músicas baseadas no seu perfil do '
 	},
 	competitionsPage: {
 		title: 'Competições | Allify',
 		notLoggedInText: 'Faça login para acessar ou criar competições',
-		notLoggedInDiv: 'Selecione uma plataforma para continuar'
+		notLoggedInDiv: 'Selecione uma plataforma para continuar',
+		loggedText1: 'Aqui estão suas competições em destaque '
 	},
 	faq: {
 		title: 'Perguntas Frequentes | Allify',
@@ -111,6 +121,20 @@ export const pt = {
 		toastErrorMessage:
 			'Erro ao enviar a mensagem. Por favor, revise as informações e tente novamente mais tarde.',
 		toastErrorMessage2: 'Erro ao enviar a mensagem. Por favor, tente novamente mais tarde.'
+	},
+	profile: {
+		profileItemText1: 'Perfil',
+		profileItemText2: 'Sair'
+	},
+	authentication: {
+		title: 'Autenticação | Allify',
+		authenticationText1: 'Processando Login...',
+		authenticationText2: 'Aguarde enquanto validamos suas credenciais.',
+		authenticationText3: 'Carregando...',
+		authenticationText4: 'Bem-vindo,',
+		authenticationText5: 'Redirecionando...',
+		authenticationText6: 'Processando autenticação...',
+		authenticationText7: 'Você será redirecionado automaticamente em alguns segundos.'
 	},
 	errorPage: {
 		title: 'Algo deu errado... | Allify',

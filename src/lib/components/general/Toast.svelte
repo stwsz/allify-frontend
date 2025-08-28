@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Toast } from 'flowbite-svelte';
-	import type { colorToast } from './../../../types/colorToast.type';
+	import type { colorToast } from '../../../../types/colorToast.type';
 
 	import {
 		CheckCircleSolid,

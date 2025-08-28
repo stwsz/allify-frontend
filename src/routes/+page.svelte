@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { CheckOutline } from 'flowbite-svelte-icons';
-
 	import alliFullBodyWaving from '$lib/assets/images/alli/full-body/alli-base-full-body-waving.webp';
 	import alliFullBodySeated from '$lib/assets/images/alli/full-body/alli-base-full-body-seated.webp';
 
 	import spotifyLogo from '$lib/assets/images/logos/spotify-logo.webp';
-	import appleMusicLogo from '$lib/assets/images/logos/apple-music-logo.webp';
 	import deezerLogo from '$lib/assets/images/logos/deezer-logo.webp';
+
+	import PlatformsCard from '$lib/components/root-page/PlatformsCard.svelte';
+	import ListItemBenefits from '$lib/components/root-page/ListItemBenefits.svelte';
 
 	import { langStore } from '$lib/stores/language.store';
 </script>
@@ -47,7 +47,7 @@
 			</p>
 
 			<a
-				href="/inscrever"
+				href="/statistics"
 				class="rounded-lg bg-[var(--color-secondary)] px-10 py-4 text-lg font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--color-primary)] hover:shadow-xl md:w-fit"
 			>
 				{$langStore.mainPage.mainPageText3}
@@ -64,43 +64,25 @@
 	</section>
 
 	<section class="py-16">
-		<div class="container mx-auto px-4">
+		<div class="mx-0 w-full px-4 md:mx-auto md:w-10/12">
 			<h2
-				class="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] bg-clip-text text-center text-4xl leading-tight font-extrabold text-balance text-transparent md:text-5xl"
+				class="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] bg-clip-text text-center text-5xl leading-tight font-bold text-transparent lg:text-7xl"
 			>
 				{$langStore.mainPage.mainPageText4}
 			</h2>
 
-			<div class="mt-20 grid grid-cols-1 gap-8 md:grid-cols-3">
-				<div
-					class="flex flex-col items-center rounded-xl border border-[var(--color-primary)]/30 p-8 text-center shadow-sm"
-				>
-					<img
-						src={spotifyLogo}
-						alt={$langStore.mainPage.mainPageAltText2}
-						class="h-24 w-48 object-contain"
-					/>
-				</div>
+			<div class="mt-20 flex flex-col items-center gap-10">
+				<PlatformsCard
+					pathImage={spotifyLogo}
+					altImage={$langStore.mainPage.mainPageAltText2}
+					description={$langStore.mainPage.mainPageSpotifyDescription}
+				/>
 
-				<div
-					class="flex flex-col items-center rounded-xl border border-[var(--color-primary)]/30 p-8 text-center shadow-sm"
-				>
-					<img
-						src={appleMusicLogo}
-						alt={$langStore.mainPage.mainPageAltText3}
-						class="h-24 w-48 object-contain"
-					/>
-				</div>
-
-				<div
-					class="flex flex-col items-center rounded-xl border border-[var(--color-primary)]/30 p-8 text-center shadow-sm"
-				>
-					<img
-						src={deezerLogo}
-						alt={$langStore.mainPage.mainPageAltText4}
-						class="h-24 w-48 object-contain"
-					/>
-				</div>
+				<PlatformsCard
+					pathImage={deezerLogo}
+					altImage={$langStore.mainPage.mainPageAltText3}
+					description={$langStore.mainPage.mainPageDeezerDescription}
+				/>
 			</div>
 		</div>
 	</section>
@@ -111,7 +93,7 @@
 		<div class="flex justify-center">
 			<img
 				src={alliFullBodyWaving}
-				alt={$langStore.mainPage.mainPageAltText5}
+				alt={$langStore.mainPage.mainPageAltText4}
 				class="order-2 w-[300px] drop-shadow-xl md:order-1 md:w-[380px] lg:w-[450px]"
 			/>
 		</div>
@@ -123,23 +105,16 @@
 				{$langStore.mainPage.mainPageText5}
 			</h2>
 
-			<p class="max-w-2xl text-lg text-[var(--color-dark)] md:text-xl">
+			<p class="max-w-2xl text-justify text-lg text-[var(--color-dark)] md:text-xl">
 				{$langStore.mainPage.mainPageText6}
 			</p>
 
 			<ul class="space-y-3 text-[var(--color-neutral)]">
-				<li class="flex items-start gap-2">
-					<CheckOutline class="h-8 w-8 shrink-0 text-[var(--color-secondary)]" />
-					<span class="text-left">{$langStore.mainPage.mainPageText7}</span>
-				</li>
-				<li class="flex items-start gap-2">
-					<CheckOutline class="h-8 w-8 shrink-0 text-[var(--color-secondary)]" />
-					<span class="text-left">{$langStore.mainPage.mainPageText8}</span>
-				</li>
-				<li class="flex items-start gap-2">
-					<CheckOutline class="h-8 w-8 shrink-0 text-[var(--color-secondary)]" />
-					<span class="text-left">{$langStore.mainPage.mainPageText9}</span>
-				</li>
+				<ListItemBenefits langStore={$langStore.mainPage.mainPageText7} />
+
+				<ListItemBenefits langStore={$langStore.mainPage.mainPageText8} />
+
+				<ListItemBenefits langStore={$langStore.mainPage.mainPageText9} />
 			</ul>
 		</div>
 	</section>

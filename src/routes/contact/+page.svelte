@@ -2,7 +2,7 @@
 	import validator from 'validator';
 	const { isEmail } = validator;
 
-	import Toast from '$lib/components/Toast.svelte';
+	import Toast from '$lib/components/general/Toast.svelte';
 
 	import alliShowContactForm from './../../lib/assets/images/alli/full-body/alli-full-body-show-contact-form.webp';
 
@@ -36,7 +36,6 @@
 		}
 	};
 </script>
-
 
 <svelte:head>
 	<title>{$langStore.contact.title}</title>

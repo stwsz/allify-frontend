@@ -20,7 +20,10 @@ export const en = {
 		footerSection2Item1: 'Privacy Policy',
 		footerSection2Item2: 'Terms of Service',
 		footerSection2Item3: 'Data Usage',
-		footerCopyright: 'Allify. All rights reserved.'
+		footerCopyright: 'Allify. All rights reserved.',
+		goodMorning: 'Good morning',
+		goodAfternoon: 'Good afternoon',
+		goodEvening: 'Good evening'
 	},
 	mainPage: {
 		title: 'Your sound, your analysis | Allify',
@@ -33,6 +36,10 @@ export const en = {
 		twitterTitle: 'Your sound, your analysis | Allify',
 		twitterDescription:
 			'Visualize your musical habits with statistics and smart recommendations. Allify transforms the way you listen to music.',
+		mainPageSpotifyDescription:
+			'Spotify is the world’s most popular music platform. With millions of songs and podcasts, it offers personalized recommendations and playlists for every taste. Available in a free ad-supported version or premium without interruptions.',
+		mainPageDeezerDescription:
+			'Deezer is a streaming service with a vast music catalog. Its Flow feature automatically creates personalized mixes. It offers good audio quality and is available in both free and premium versions.',
 		mainPageText1: 'Transform the way you listen to music',
 		mainPageText2:
 			'We are passionate about musical data. Allify helps you discover patterns, explore your taste, and connect with what truly moves you.',
@@ -40,9 +47,8 @@ export const en = {
 		mainPageAltText1: 'Alli sitting with headphones listening to music',
 		mainPageText4: 'Integration with major streaming services',
 		mainPageAltText2: 'Spotify logo',
-		mainPageAltText3: 'Apple Music logo',
-		mainPageAltText4: 'Deezer logo',
-		mainPageAltText5: 'Alli with headphones waving',
+		mainPageAltText3: 'Deezer logo',
+		mainPageAltText4: 'Alli with headphones waving',
 		mainPageText5: 'Discover Alli, your musical guide',
 		mainPageText6:
 			'Alli is more than just a friendly face. He is your personal guide, accompanying you through every musical discovery and helping you explore new sonic horizons.',
@@ -53,17 +59,20 @@ export const en = {
 	statisticsPage: {
 		title: 'Statistics | Allify',
 		notLoggedInText: 'Log in to access your statistics',
-		notLoggedInDiv: 'Select a platform to continue'
+		notLoggedInDiv: 'Select a platform to continue',
+		loggedText1: 'Here are your metrics from '
 	},
 	suggestionsPage: {
 		title: 'Suggestions | Allify',
 		notLoggedInText: 'Log in to access your personalized suggestions',
-		notLoggedInDiv: 'Select a platform to continue'
+		notLoggedInDiv: 'Select a platform to continue',
+		loggedText1: 'We’ve prepared some suggestions of new artists and songs based on your'
 	},
 	competitionsPage: {
 		title: 'Competitions | Allify',
 		notLoggedInText: 'Log in to access or create competitions',
-		notLoggedInDiv: 'Select a platform to continue'
+		notLoggedInDiv: 'Select a platform to continue',
+		loggedText1: 'Here are your competitions in spotlight'
 	},
 	faq: {
 		title: 'Frequently Asked Questions | Allify',
@@ -110,6 +119,20 @@ export const en = {
 		toastErrorMessage:
 			'Error sending the message. Please review the information and try again later.',
 		toastErrorMessage2: 'Error sending the message. Please try again later.'
+	},
+	profile: {
+		profileItemText1: 'Profile',
+		profileItemText2: 'Log Out'
+	},
+	authentication: {
+		title: 'Authentication | Allify',
+		authenticationText1: 'Processing Login...',
+		authenticationText2: 'Please wait while we validate your credentials.',
+		authenticationText3: 'Loading...',
+		authenticationText4: 'Welcome,',
+		authenticationText5: 'Redirecting...',
+		authenticationText6: 'Processing authentication...',
+		authenticationText7: 'You will be redirected automatically in a few seconds.'
 	},
 	errorPage: {
 		title: 'Something went wrong... | Allify',

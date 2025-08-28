@@ -1,18 +1,35 @@
 <script lang="ts">
-	import AppleMusicIcon from '$lib/assets/images/icons/AppleMusicIcon.svelte';
-	import SpotifyIcon from '$lib/assets/images/icons/SpotifyIcon.svelte';
-	import DeezerIcon from '$lib/assets/images/icons/DeezerIcon.svelte';
-
 	import { langStore } from '$lib/stores/language.store';
-	import { userStore } from '$lib/stores/user.store';
+	import { isAuthenticated, user } from '$lib/auth/auth';
+
+	import AuthOptions from '$lib/components/auth/AuthOptions.svelte';
+
+	let currentHour = new Date().getHours();
 </script>
 
 <svelte:head>
 	<title>{$langStore.suggestionsPage.title}</title>
 </svelte:head>
 
-{#if $userStore.token}
-	<main></main>
+{#if $isAuthenticated && $user}
+	<main class="bg-[var(--color-light)] px-6 py-8 md:px-12 md:py-14 lg:px-30">
+		<div class="flex flex-col gap-4">
+			<h1 class="text-2xl font-medium text-[var(--color-dark)] lg:text-4xl">
+				{#if currentHour < 12}
+					{$langStore.general.goodMorning}, {$user.name}!
+				{:else if currentHour < 18}
+					{$langStore.general.goodAfternoon}, {$user.name}!
+				{:else}
+					{$langStore.general.goodEvening}, {$user.name}!
+				{/if}
+			</h1>
+
+			<h2 class="text-base text-[var(--color-dark)] lg:text-xl">
+				{$langStore.suggestionsPage.loggedText1}
+				{$user?.sub?.includes('spotify') ? 'Spotify' : 'Deezer'}
+			</h2>
+		</div>
+	</main>
 {:else}
 	<main class="flex flex-col items-center justify-center gap-10 bg-[var(--color-light)] px-4 py-20">
 		<h1
@@ -26,31 +43,7 @@
 				{$langStore.suggestionsPage.notLoggedInDiv}
 			</h2>
 
-			<div class="mt-6 flex flex-col justify-between gap-4 md:flex-row">
-				<button
-					type="button"
-					class="hover:bg-opacity-90 flex w-full cursor-pointer items-center justify-center gap-2 rounded bg-[var(--color-secondary)] py-3 font-medium text-[var(--color-light)] transition-all duration-200 hover:scale-105 md:w-1/3"
-				>
-					<SpotifyIcon svgClass="w-5 h-5" />
-					Spotify
-				</button>
-
-				<button
-					type="button"
-					class="hover:bg-opacity-90 flex w-full cursor-pointer items-center justify-center gap-2 rounded bg-[var(--color-secondary)] py-3 font-medium text-[var(--color-light)] transition-all duration-200 hover:scale-105 md:w-1/3"
-				>
-					<DeezerIcon svgClass="w-5 h-5 rounded-xs" />
-					Deezer
-				</button>
-
-				<button
-					type="button"
-					class="hover:bg-opacity-90 flex w-full cursor-pointer items-center justify-center gap-2 rounded bg-[var(--color-secondary)] py-3 font-medium text-[var(--color-light)] transition-all duration-200 hover:scale-105 md:w-1/3"
-				>
-					<AppleMusicIcon svgClass="w-5 h-5" />
-					Apple Music
-				</button>
-			</div>
+			<AuthOptions />
 		</section>
 	</main>
 {/if}

@@ -4,6 +4,8 @@
 	import AllifyLogo from '$lib/assets/images/logos/AllifyLogo.svelte';
 	import Language from './Language.svelte';
 
+	import Profile from './Profile.svelte';
+
 	import { langStore } from '$lib/stores/language.store';
 
 	let isMobileMenuOpen = false;
@@ -39,7 +41,7 @@
 		</nav>
 	</div>
 
-	<div class="flex items-center gap-4">
+	<div class="flex flex-row-reverse items-center gap-6 lg:flex-row">
 		<button
 			class="cursor-pointer text-2xl text-[var(--color-secondary)] lg:hidden"
 			on:click={toggleMenu}
@@ -55,6 +57,8 @@
 		<div class="hidden lg:block">
 			<Language />
 		</div>
+
+		<Profile />
 	</div>
 
 	{#if isMobileMenuOpen}
