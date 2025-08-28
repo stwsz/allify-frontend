@@ -57,18 +57,3 @@
 		{$langStore.authentication.authenticationText7}
 	</p>
 </main>
-
-<style>
-	@keyframes pulse-width {
-		0%, 100% {
-			width: 30%;
-		}
-		50% {
-			width: 70%;
-		}
-	}
-	
-	.animate-pulse-width {
-		animation: pulse-width 2s ease-in-out infinite;
-	}
-</style>

@@ -15,11 +15,10 @@ export async function initAuth() {
 		const client = await createAuth0Client({
 			domain: import.meta.env.VITE_AUTH0_DOMAIN,
 			clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,
-			authorizationParams: {
-				redirect_uri: getRedirectUri()
-			},
-			cacheLocation: 'localstorage'
+			authorizationParams: { redirect_uri: getRedirectUri() },
+			cacheLocation: 'memory' 
 		});
+
 
 		auth0Client.set(client);
 
