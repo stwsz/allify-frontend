@@ -73,6 +73,10 @@ async function checkAuthStatus(client: Auth0Client) {
 export function loginWithProvider(connection: string) {
 	const client = get(auth0Client);
 
+	console.log('Domain:', import.meta.env.VITE_AUTH0_DOMAIN);
+	console.log('Client ID:', import.meta.env.VITE_AUTH0_CLIENT_ID);
+	console.log('Redirect URI:', window.location.origin + '/authentication');
+
 	if (client) {
 		client.loginWithRedirect({
 			authorizationParams: {
