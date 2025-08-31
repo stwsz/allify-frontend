@@ -8,15 +8,15 @@
 
 <button
 	type="button"
-	class="hover:bg-opacity-90 flex w-full cursor-pointer items-center justify-center gap-2 rounded bg-[var(--color-secondary)] py-3 font-medium text-[var(--color-light)] transition-all duration-200 hover:scale-105 md:w-1/3"
+	class="hover:bg-opacity-90 flex w-full cursor-pointer text-lg items-center justify-center gap-2 rounded bg-[var(--color-secondary)] py-3 font-medium text-[var(--color-light)] transition-all duration-200 hover:scale-105"
 	on:click={() => {
 		onClick();
 	}}
 >
 	{#if platformName.toLocaleLowerCase() === 'spotify'}
-		<SpotifyIcon svgClass="w-5 h-5" />
+		<SpotifyIcon svgClass="w-6 h-6" />
 	{:else if platformName.toLocaleLowerCase() === 'deezer'}
-		<DeezerIcon svgClass="w-5 h-5" />
+		<DeezerIcon svgClass="w-6 h-6" />
 	{/if}
 
 	{platformName}

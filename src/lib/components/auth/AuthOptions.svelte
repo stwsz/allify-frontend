@@ -11,7 +11,7 @@
 	}
 </script>
 
-<div class="mt-6 flex flex-col justify-between gap-4 md:flex-row">
+<div class="mt-6 flex flex-col justify-between gap-4">
 	<PlatformsButton platformName="Spotify" onClick={loginWithSpotify} />
 	<PlatformsButton platformName="Deezer" onClick={loginWithDeezer} />
 </div>

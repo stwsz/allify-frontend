@@ -26,9 +26,6 @@ function getReturnToUrl() {
 
 export async function initAuth() {
 	try {
-		console.log('Initializing Auth0 in', dev ? 'development' : 'production', 'mode');
-		console.log('Redirect URI:', getRedirectUri());
-		
 		const client = await createAuth0Client({
 			domain: import.meta.env.VITE_AUTH0_DOMAIN,
 			clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,
@@ -49,17 +46,12 @@ export async function initAuth() {
 
 		if (isOnAuthPage && hasAuthParams) {
 			try {
-				console.log('Processing Auth0 callback...');
 				const result = await client.handleRedirectCallback();
-				console.log('Callback processed successfully:', result);
 				
-				// Redireciona para home após sucesso
 				if (typeof window !== 'undefined') {
 					window.history.replaceState({}, document.title, '/');
 				}
 			} catch (callbackError) {
-				console.error('Callback error:', callbackError);
-				// Em caso de erro, limpa a URL e vai para home
 				if (typeof window !== 'undefined') {
 					window.history.replaceState({}, document.title, '/');
 				}
@@ -69,10 +61,6 @@ export async function initAuth() {
 		await checkAuthStatus(client);
 	} catch (error) {
 		console.error('Auth initialization error:', error);
-		console.error('Environment variables check:');
-		console.error('- VITE_AUTH0_DOMAIN:', import.meta.env.VITE_AUTH0_DOMAIN);
-		console.error('- VITE_AUTH0_CLIENT_ID:', import.meta.env.VITE_AUTH0_CLIENT_ID ? 'Set' : 'Missing');
-		console.error('- VITE_AUTH0_BASE_URL:', import.meta.env.VITE_AUTH0_BASE_URL);
 	} finally {
 		isLoading.set(false);
 	}
@@ -81,20 +69,16 @@ export async function initAuth() {
 async function checkAuthStatus(client: Auth0Client) {
 	try {
 		const loggedIn = await client.isAuthenticated();
-		console.log('User authenticated:', loggedIn);
 		isAuthenticated.set(loggedIn);
 
 		if (loggedIn) {
 			const userData = await client.getUser();
-			console.log('User data:', userData);
 			user.set(userData);
 
 			try {
 				const token = await client.getTokenSilently();
-				console.log('Token obtained successfully');
 			} catch (tokenError) {
 				console.error('Token error:', tokenError);
-				// Se não conseguir obter token, faz logout
 				await logout();
 			}
 		} else {
@@ -111,9 +95,6 @@ export function loginWithProvider(connection: string) {
 	const client = get(auth0Client);
 	
 	if (client) {
-		console.log('Starting login with connection:', connection);
-		console.log('Using redirect URI:', getRedirectUri());
-		
 		client.loginWithRedirect({
 			authorizationParams: {
 				connection: connection,
@@ -130,9 +111,6 @@ export function login() {
 	const client = get(auth0Client);
 	
 	if (client) {
-		console.log('Starting login');
-		console.log('Using redirect URI:', getRedirectUri());
-		
 		client.loginWithRedirect({
 			authorizationParams: {
 				redirect_uri: getRedirectUri(),
@@ -148,12 +126,10 @@ export async function logout() {
 	const client = get(auth0Client);
 
 	if (client) {
-		console.log('Logging out...');
 		isAuthenticated.set(false);
 		user.set(null);
 
 		const returnTo = getReturnToUrl();
-		console.log('Return to URL:', returnTo);
 
 		await client.logout({
 			logoutParams: {
@@ -175,7 +151,6 @@ export async function getAccessToken() {
 		} catch (error) {
 			console.error('Get token error:', error);
 			try {
-				console.log('Attempting to refresh token...');
 				await client.getTokenWithPopup();
 				return await client.getTokenSilently();
 			} catch (refreshError) {

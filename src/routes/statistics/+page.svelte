@@ -2,13 +2,21 @@
 	import { langStore } from '$lib/stores/language.store';
 	import { isAuthenticated, user } from '$lib/auth/auth';
 
+	import { onMount } from 'svelte';
+
+	import Love from '$lib/components/Love.svelte';
 	import AuthOptions from '$lib/components/auth/AuthOptions.svelte';
 
 	let currentHour = new Date().getHours();
+	let userName: string | null = null;
+
+	onMount(() => {
+		userName = window.prompt('Vamos ver se você está na lista VIP do Aliify, digite seu nome (Caso seja Filipe ou Letícia não digitar Ana ou André):');
+	});
 </script>
 
 <svelte:head>
-	<title>{$langStore.suggestionsPage.title}</title>
+	<title>{$langStore.statisticsPage.title}</title>
 </svelte:head>
 
 {#if $isAuthenticated && $user}
@@ -29,6 +37,10 @@
 				{$user?.sub?.includes('spotify') ? 'Spotify' : 'Deezer'}
 			</h2>
 		</div>
+
+		{#if userName}
+			<Love userName={userName} />
+		{/if}
 	</main>
 {:else}
 	<main class="flex flex-col items-center justify-center gap-10 bg-[var(--color-light)] px-4 py-20">
@@ -38,8 +50,8 @@
 			{$langStore.statisticsPage.notLoggedInText}
 		</h1>
 
-		<section class="mb-10 w-full max-w-[680px] rounded-lg bg-white p-12 shadow-md">
-			<h2 class="mb-8 text-center text-base font-medium text-[var(--color-dark)] md:text-xl">
+		<section class="mb-10 w-full max-w-[480px] rounded-lg bg-white p-12 shadow-md">
+			<h2 class="mb-8 text-center text-lg font-medium text-[var(--color-dark)] md:text-xl">
 				{$langStore.statisticsPage.notLoggedInDiv}
 			</h2>
 
@@ -47,4 +59,5 @@
 		</section>
 	</main>
 {/if}
+
 

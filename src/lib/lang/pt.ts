@@ -60,7 +60,7 @@ export const pt = {
 		title: 'Estatísticas | Allify',
 		notLoggedInText: 'Faça login para acessar suas estatísticas',
 		notLoggedInDiv: 'Selecione uma plataforma para continuar',
-		loggedText1: 'Aqui estão suas métricas do '
+		loggedText1: 'Aqui estão suas estatísticas do '
 	},
 	suggestionsPage: {
 		title: 'Sugestões | Allify',
