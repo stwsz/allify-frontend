@@ -4,14 +4,8 @@
 	import { onMount } from 'svelte';
 
 	import AuthOptions from '$lib/components/auth/AuthOptions.svelte';
-	import Love from '$lib/components/Love.svelte';
 
 	let currentHour = new Date().getHours();
-	let userName: string | null = null;
-
-	onMount(() => {
-		userName = window.prompt('Vamos ver se você está na lista VIP do Aliify, digite seu nome (Caso seja Filipe ou Letícia não digitar Ana ou André):');
-	});
 </script>
 
 <svelte:head>
@@ -36,10 +30,6 @@
 				{$user?.sub?.includes('spotify') ? 'Spotify' : 'Deezer'}
 			</h2>
 		</div>
-
-		{#if userName}
-			<Love userName={userName} />
-		{/if}
 	</main>
 {:else}
 	<main class="flex flex-col items-center justify-center gap-10 bg-[var(--color-light)] px-4 py-20">
