@@ -1,0 +1,73 @@
+export const pt = {
+	language: 'pt',
+	configuration: {
+		langAttribute: 'pt_BR',
+		metaOgAndTwitterContent: 'Entenda seus hábitos musicais com dados reais.',
+		metaDescriptionContent:
+			'Conecte seus streamings, analise seus hábitos musicais e descubra novas músicas com o Allify.'
+	},
+	generalTexts: {
+		logoColorfulAltText: 'Logotipo colorido do Allify',
+		logoLightAltText: 'Logotipo claro do Allify',
+		alliFullBodyAltText:
+			'Ilustração da mascote Allify, chamada Alli, com corpo completo, sorrindo e acenando',
+		headerNavigationItem1: 'Meu Perfil Musical',
+		headerNavigationItem2: 'Descobertas',
+		headerNavigationItem3: 'Batalhas de Música',
+		headerNavigationAriaLabel: 'Navegação principal',
+		headerLanguagePt: 'Português',
+		headerLanguageEn: 'Inglês',
+		headerLanguageEs: 'Espanhol',
+		headerLanguageDe: 'Alemão',
+		dropdownAriaLabel: 'Seleção de idioma',
+		profileButtonAriaLabel: 'Botão de perfil do usuário',
+		profileNotLoggedAltText: 'Avatar do perfil do usuário',
+		profileLoggedAltText: 'Foto do perfil do usuário',
+		profileLoggedItem1: 'Perfil',
+		profileLoggedItem2: 'Configurações',
+		profileLoggedItem3: 'Sair',
+		profileNotLoggedItem1: 'Entrar',
+		profileNotLoggedItem2: 'Registrar-se',
+		burguerMenuAltText: 'Abrir menu de navegação',
+		closeMenuAltText: 'Fechar menu de navegação',
+		footerFirstSectionText1:
+			'Transformando dados musicais em descobertas, rankings e novas formas de ouvir música.',
+		footerFirstSectionText2: 'Um produto de',
+		footerCopyrightText: 'Todos os direitos reservados.',
+		footerColumn1Title: 'ACOMPANHE',
+		footerColumn1Item1AltText: 'Ícone do LinkedIn',
+		footerColumn1Item2AltText: 'Ícone do GitHub',
+		footerColumn2Title: 'NAVEGAÇÃO',
+		footerColumn2Item1: 'Meu Perfil Musical',
+		footerColumn2Item2: 'Descobertas',
+		footerColumn2Item3: 'Batalhas de Música',
+		footerColumn3Title: 'LEGAL',
+		footerColumn3Item1: 'Política de Privacidade',
+		footerColumn3Item2: 'Termos de Serviço',
+		footerColumn3Item3: 'Uso de Dados',
+		stillInDevelopmentText: 'Ainda em desenvolvimento'
+	},
+	homePage: {
+		title: 'Tudo sobre sua música, conectado em um só lugar | Allify',
+		homePageHeroSectionHeading1: 'Entenda seus hábitos musicais com dados reais',
+		homePageHeroSectionParagraph1:
+			'Conecte seus streamings, acompanhe métricas detalhadas, receba sugestões personalizadas e dispute rankings com seus amigos.',
+		homePageHeroSectionButton1: 'Conectar meus streamings',
+		connectPlatformsSectionHeading1: 'Conecte suas plataformas de streaming',
+		connectPlatformsSectionParagraph1:
+			'Integre suas contas e acompanhe métricas, desempenho e insights em um só lugar.',
+		connectPlatformSpotifyAltText: 'Ícone do Spotify',
+		connectPlatformSpotifyDescription:
+			'Uma das maiores plataformas de streaming de música do mundo, o Spotify oferece milhões de faixas, playlists personalizadas e recursos avançados de descoberta, conectando artistas e ouvintes por meio de dados, tendências e recomendações inteligentes.',
+		connectPlatformDeezerAltText: 'Ícone do Deezer',
+		connectPlatformDeezerDescription:
+			'Plataforma global de streaming de música, a Deezer reúne um vasto catálogo de faixas, playlists editoriais e recursos como recomendações personalizadas, oferecendo uma experiência musical completa para diferentes perfis de ouvintes.',
+		connectPlatformCardPlatformConnectIconAltText: 'Ícone de Conexão',
+		connectPlatformCardPlatformConnectButton: 'Conectar',
+		connectPlatformCardPlatformExternalLinkIconAltText: 'Ícone de Link Externo',
+		connectPlatformCardPlatformExternalLink: 'Ir para',
+		devicesSectionHeading1: 'Leve sua música com você',
+		devicesSectionParagraph1:
+			'Acesse seus dados musicais de qualquer lugar e em qualquer dispositivo, com uma experiência fluida, consistente e intuitiva.'
+	}
+};

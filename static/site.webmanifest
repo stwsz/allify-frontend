@@ -1,0 +1,28 @@
+{
+  "id": "/",
+  "name": "Allify",
+  "short_name": "Allify",
+  "description": "Understand your music habits through real data insights.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#09623a",
+  "theme_color": "#09623a",
+  "categories": ["music", "analytics", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
