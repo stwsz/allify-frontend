@@ -8,7 +8,7 @@
 	import DevicesSection from '$lib/components/home-page/DevicesSection.svelte';
 
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
 </script>
 
 <svelte:head>

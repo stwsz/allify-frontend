@@ -1,17 +1,14 @@
 <script lang="ts">
-	// Svelte
-	import { page } from '$app/stores';
-
 	// Assets
 	import CloseIcon from '$lib/assets/images/icons/CloseIcon.svelte';
 	import AllifyLogoColorful from '$lib/assets/images/logos/AllifyLogoColorful.svelte';
 
 	// Components
-	import HeaderNavigation from '$lib/components/general/header/HeaderNavigation.svelte';
 	import AsideProfile from '$lib/components/general/menus/aside-menu/AsideProfile.svelte';
+	import AsideNavigation from '$lib/components/general/menus/aside-menu/AsideNavigation.svelte';
 
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
 
 	export let isAsideMenuOpen: boolean;
 </script>
@@ -28,11 +25,11 @@
             z-50
             flex
 			h-dvh
-            w-2/3 flex-col
+            w-4/5 flex-col
             rounded-l-xl
             bg-s-default
             shadow-lg
-            sm:w-80
+            sm:w-3/5
             lg:hidden
         "
 	>
@@ -56,7 +53,7 @@
 			</button>
 		</div>
 
-		<HeaderNavigation currentPage={$page.url.pathname} isAsideMenu={true} />
+		<AsideNavigation />
 
 		<AsideProfile />
 	</aside>

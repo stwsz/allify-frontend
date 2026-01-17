@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
+	import { meStore } from '$lib/stores/me.store';
 </script>
 
 <section class="flex items-center px-8 py-12 sm:px-12 lg:justify-between lg:py-32 2xl:px-32">
@@ -22,11 +23,17 @@
 			</p>
 		</div>
 
-		<button
-			class="mt-6 w-90 max-w-90 cursor-pointer rounded-lg bg-brand-primary py-5 text-sm font-medium text-t-inverse shadow-md transition-all hover:scale-105 hover:bg-brand-primary-dark"
+		<a
+			class="mt-6 w-90 max-w-90 cursor-pointer rounded-lg bg-brand-primary py-5 text-center text-sm font-medium text-t-inverse shadow-md transition-all hover:scale-105 hover:bg-brand-primary-dark"
+			href="/my-musical-profile"
+			aria-label={$meStore !== undefined
+				? $translationsStore.homePage.homePageHeroSectionButton1v2AriaLabel
+				: $translationsStore.homePage.homePageHeroSectionButton1AriaLabel}
 		>
-			{$translationsStore.homePage.homePageHeroSectionButton1}
-		</button>
+			{$meStore !== undefined
+				? $translationsStore.homePage.homePageHeroSectionButton1v2
+				: $translationsStore.homePage.homePageHeroSectionButton1}
+		</a>
 	</div>
 
 	<!-- Imagens still in development -->

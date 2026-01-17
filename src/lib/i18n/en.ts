@@ -26,8 +26,10 @@ export const en = {
 		profileLoggedItem1: 'Profile',
 		profileLoggedItem2: 'Settings',
 		profileLoggedItem3: 'Log out',
-		profileNotLoggedItem1: 'Log in',
-		profileNotLoggedItem2: 'Sign up',
+		profileNotLoggedItem1:
+			'Log in with <span class="ml-1 font-semibold text-[#1fd25e]">Spotify</span>',
+		profileNotLoggedItem2:
+			'Log in with <span class="ml-1 font-semibold text-[#a238ff]">Deezer</span>',
 		burguerMenuAltText: 'Open navigation menu',
 		closeMenuAltText: 'Close navigation menu',
 		footerFirstSectionText1:
@@ -53,6 +55,9 @@ export const en = {
 		homePageHeroSectionParagraph1:
 			'Connect your streamings, track detailed metrics, get personalized suggestions, and compete in rankings with your friends.',
 		homePageHeroSectionButton1: 'Connect my streamings',
+		homePageHeroSectionButton1v2: 'Go to my musical profile',
+		homePageHeroSectionButton1v2AriaLabel: 'Go to my musical profile',
+		homePageHeroSectionButton1AriaLabel: 'Connect my streamings',
 		connectPlatformsSectionHeading1: 'Connect your streaming platforms',
 		connectPlatformsSectionParagraph1:
 			'Integrate your accounts and track metrics, performance, and insights in one place.',
@@ -64,6 +69,9 @@ export const en = {
 			'A global music streaming platform, Deezer brings together a vast catalog of tracks, editorial playlists, and features like personalized recommendations, offering a complete music experience for different listener profiles.',
 		connectPlatformCardPlatformConnectIconAltText: 'Connect Icon',
 		connectPlatformCardPlatformConnectButton: 'Connect',
+		connectPlatformCardPlatformConnectButtonAriaLabel: 'Connect to platform',
+		connectPlatformCardPlatformConnectedButton: 'Connected',
+		connectPlatformCardPlatformConnectedButtonAriaLabel: 'Platform connected',
 		connectPlatformCardPlatformExternalLinkIconAltText: 'External Link Icon',
 		connectPlatformCardPlatformExternalLink: 'Go to',
 		devicesSectionHeading1: 'Take your music with you',

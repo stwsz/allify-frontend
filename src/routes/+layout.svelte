@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Svelte
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	// Global styles
 	import '$lib/styles/global.css';
@@ -9,7 +10,34 @@
 	import Header from '$lib/components/general/header/Header.svelte';
 	import Footer from '$lib/components/general/footer/Footer.svelte';
 
+	// Stores
+	import { meStore } from '$lib/stores/me.store';
+
 	let { children } = $props();
+
+	const fetchMeInfo = async () => {
+		try {
+			const response = await fetch('/api/spotify/me', {
+				credentials: 'include'
+			});
+
+			if (!response.ok) {
+				meStore.set(undefined);
+				return;
+			}
+
+			const data = await response.json();
+			meStore.set({ ...data, streaming: 'spotify' });
+		} catch {
+			meStore.set(undefined);
+		}
+
+		console.log($meStore);
+	};
+
+	onMount(() => {
+		if (!$meStore) fetchMeInfo();
+	});
 </script>
 
 <svelte:head>

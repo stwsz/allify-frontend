@@ -25,8 +25,10 @@ export const de = {
 		profileLoggedItem1: 'Profil',
 		profileLoggedItem2: 'Einstellungen',
 		profileLoggedItem3: 'Abmelden',
-		profileNotLoggedItem1: 'Anmelden',
-		profileNotLoggedItem2: 'Registrieren',
+		profileNotLoggedItem1:
+			'Anmelden mit <span class="ml-1 font-semibold text-[#1fd25e]">Spotify</span>',
+		profileNotLoggedItem2:
+			'Anmelden mit <span class="ml-1 font-semibold text-[#a238ff]">Deezer</span>',
 		burguerMenuAltText: 'Navigationsmenü öffnen',
 		profileLoggedAltText: 'Benutzerprofilbild',
 		closeMenuAltText: 'Navigationsmenü schließen',
@@ -53,6 +55,9 @@ export const de = {
 		homePageHeroSectionParagraph1:
 			'Verbinde deine Streaming-Dienste, verfolge detaillierte Metriken, erhalte personalisierte Vorschläge und konkurriere in Rankings mit deinen Freunden.',
 		homePageHeroSectionButton1: 'Meine Streamings verbinden',
+		homePageHeroSectionButton1v2: 'Zu meinem Musikprofil gehen',
+		homePageHeroSectionButton1AriaLabel: 'Meine Streamings verbinden',
+		homePageHeroSectionButton1v2AriaLabel: 'Zu meinem Musikprofil gehen',
 		connectPlatformsSectionHeading1: 'Verbinde deine Streaming-Plattformen',
 		connectPlatformsSectionParagraph1:
 			'Integriere deine Konten und verfolge Metriken, Leistung und Einblicke an einem Ort.',
@@ -64,6 +69,9 @@ export const de = {
 			'Die globale Musik-Streaming-Plattform Deezer vereint einen umfangreichen Katalog an Titeln, redaktionelle Playlists und Funktionen wie personalisierte Empfehlungen, um ein umfassendes Musikerlebnis für verschiedene Hörertypen zu bieten.',
 		connectPlatformCardPlatformConnectIconAltText: 'Verbindungssymbol',
 		connectPlatformCardPlatformConnectButton: 'Verbinden',
+		connectPlatformCardPlatformConnectButtonAriaLabel: 'Mit der Plattform verbinden',
+		connectPlatformCardPlatformConnectedButton: 'Verbunden',
+		connectPlatformCardPlatformConnectedButtonAriaLabel: 'Plattform verbunden',
 		connectPlatformCardPlatformExternalLinkIconAltText: 'Externes Linksymbol',
 		connectPlatformCardPlatformExternalLink: 'Gehe zu',
 		devicesSectionHeading1: 'Nimm deine Musik mit',

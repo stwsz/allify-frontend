@@ -7,7 +7,7 @@
 	import CardPlatform from '$lib/components/home-page/CardPlatform.svelte';
 
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
 
 	// Types
 	import type { CardPlatformType } from '$lib/types/CardPlatform.type';

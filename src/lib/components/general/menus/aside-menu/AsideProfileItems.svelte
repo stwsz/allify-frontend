@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
 
 	// Props
 	export let loggedIn: boolean;
@@ -8,7 +8,7 @@
 	let notLoggedItems = [
 		{
 			text: $translationsStore.generalTexts.profileNotLoggedItem1,
-			href: '/'
+			href: '/api/spotify/auth/login'
 		},
 		{
 			text: $translationsStore.generalTexts.profileNotLoggedItem2,
@@ -28,7 +28,7 @@
 	];
 </script>
 
-<ul class="mb-2 flex w-full flex-col gap-2">
+<ul class="mb-2 flex w-full flex-col gap-3">
 	{#if loggedIn}
 		{#each loggedItems as item}
 			<li class="w-full">
@@ -47,7 +47,7 @@
 					href={item.href}
 					class="block w-full rounded-lg px-4 py-3 text-xs text-t-inverse transition-colors duration-150 hover:bg-s-muted/30"
 				>
-					{item.text}
+					{@html item.text}
 				</a>
 			</li>
 		{/each}

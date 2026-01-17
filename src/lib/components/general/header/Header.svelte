@@ -13,7 +13,7 @@
 	import HeaderSelectLanguage from '$lib/components/general/header/HeaderSelectLanguage.svelte';
 
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
 
 	let isAsideMenuOpen = false;
 	let openLanguageDropdown = false;
