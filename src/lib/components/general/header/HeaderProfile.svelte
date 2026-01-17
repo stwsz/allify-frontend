@@ -4,13 +4,14 @@
 	import HeaderProfileItems from '$lib/components/general/header/HeaderProfileItems.svelte';
 
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
+	import { meStore } from '$lib/stores/me.store';
 
 	// Props
 	export let showProfileOptions: boolean;
 	export let openLanguageDropdown: boolean;
 
-	let loggedIn: boolean = true;
+	$: loggedIn = $meStore ? true : false;
 </script>
 
 <button
@@ -44,20 +45,19 @@
 	}}
 >
 	{#if loggedIn}
-		<div
-			class="
-				h-9
-				w-9
+		<img
+			class={`
+				h-${$meStore?.images[1]?.height}
+				w-${$meStore?.images[1]?.width}
 				rounded-full
-				text-brand-primary
-				font-semibold
-				flex
-				items-center
 				border
-				justify-center
 				object-cover
-			"
-		>A</div>
+				p-1
+				text-brand-primary
+			`}
+			src={$meStore?.images[1]?.url}
+			alt={$meStore?.display_name}
+		/>
 	{:else}
 		<ProfileIcon
 			iconSvgClass="

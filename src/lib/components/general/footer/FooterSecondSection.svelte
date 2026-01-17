@@ -4,7 +4,7 @@
 	import GithubIcon from '$lib/assets/images/icons/social-network/GithubIcon.svelte';
 
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
 
 	// Types
 	import type { FooterColumnItems } from '$lib/types/FooterColumnItems.type';

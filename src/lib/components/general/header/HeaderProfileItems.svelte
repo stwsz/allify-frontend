@@ -1,15 +1,16 @@
 <script lang="ts">
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
+	import { meStore } from '$lib/stores/me.store';
 
 	// Props
 	export let loggedIn: boolean;
 	export let showProfileOptions: boolean;
 
-	let notLoggedItems = [
+	$: notLoggedItems = [
 		{
 			text: $translationsStore.generalTexts.profileNotLoggedItem1,
-			href: '/'
+			href: '/api/spotify/auth/login'
 		},
 		{
 			text: $translationsStore.generalTexts.profileNotLoggedItem2,
@@ -17,7 +18,7 @@
 		}
 	];
 
-	let loggedItems = [
+	$: loggedItems = [
 		{
 			text: $translationsStore.generalTexts.profileLoggedItem1,
 			href: '/'
@@ -31,7 +32,7 @@
 
 <div
 	class={`${showProfileOptions ? 'block' : 'hidden'}
-		${loggedIn ? 'right-10 -bottom-44 w-56' : 'right-14 -bottom-16 w-48'}
+		${loggedIn ? 'right-10 -bottom-44 w-56' : 'right-10 -bottom-16 w-54'}
 		animate-fadeIn
 		absolute
 		z-50
@@ -48,8 +49,8 @@
 >
 	{#if loggedIn}
 		<div class="mb-2 px-2">
-			<p class="text-sm leading-tight font-semibold text-t-primary">Nome</p>
-			<p class="mt-0.5 truncate text-[11px] text-t-muted">Email</p>
+			<p class="text-sm leading-tight font-semibold text-t-primary">{$meStore?.display_name}</p>
+			<p class="mt-0.5 truncate text-[11px] text-t-muted">{$meStore?.email}</p>
 		</div>
 
 		<div class="my-3 h-px bg-b-muted/10"></div>
@@ -82,6 +83,10 @@
 				transition-all
 				hover:bg-status-error/20
 			"
+			on:click={() => {
+				showProfileOptions = false;
+				meStore.set(undefined);
+			}}
 		>
 			{$translationsStore.generalTexts.profileLoggedItem3}
 		</button>
@@ -93,7 +98,7 @@
 						href={item.href}
 						class="flex w-full items-center px-3 py-2 transition-all hover:translate-x-0.5"
 					>
-						{item.text}
+						{@html item.text}
 					</a>
 				</li>
 			{/each}

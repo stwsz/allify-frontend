@@ -1,5 +1,5 @@
 import { derived, type Readable } from 'svelte/store';
-import languageStore from './language.store';
+import { languageStore } from './language.store';
 
 import { en } from '../i18n/en';
 import { pt } from '../i18n/pt';
@@ -8,7 +8,7 @@ import { es } from '../i18n/es';
 
 type Translations = typeof en | typeof pt | typeof de | typeof es;
 
-const translationsStore: Readable<Translations> = derived(languageStore, ($language) => {
+export const translationsStore: Readable<Translations> = derived(languageStore, ($language) => {
 	switch ($language) {
 		case 'pt':
 			return pt;
@@ -22,5 +22,3 @@ const translationsStore: Readable<Translations> = derived(languageStore, ($langu
 			return pt;
 	}
 });
-
-export default translationsStore;

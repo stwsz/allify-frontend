@@ -3,7 +3,7 @@
 	import AllifyLogoLight from '$lib/assets/images/logos/AllifyLogoLight.svelte';
 
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
 </script>
 
 <div class="flex flex-col items-center justify-between gap-6 text-t-inverse lg:items-start">

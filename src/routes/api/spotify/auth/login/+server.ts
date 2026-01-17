@@ -1,0 +1,26 @@
+import { redirect } from '@sveltejs/kit';
+import { SPOTIFY_CLIENT_ID, SPOTIFY_REDIRECT_URI } from '$env/static/private';
+
+export const GET = async ({ cookies }) => {
+	const scope = 'user-read-email user-read-private';
+	const state = crypto.randomUUID();
+
+	cookies.set('spotify_state', state, {
+		httpOnly: true,
+		secure: process.env.NODE_ENV === 'production',
+		path: '/',
+		maxAge: 60 * 5
+	});
+
+	const url =
+		'https://accounts.spotify.com/authorize?' +
+		new URLSearchParams({
+			response_type: 'code',
+			client_id: SPOTIFY_CLIENT_ID,
+			scope,
+			redirect_uri: SPOTIFY_REDIRECT_URI,
+			state
+		});
+
+	throw redirect(302, url);
+};

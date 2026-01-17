@@ -6,21 +6,20 @@
 	import AsideProfileItems from '$lib/components/general/menus/aside-menu/AsideProfileItems.svelte';
 
 	// Stores
-	import translationsStore from '$lib/stores/translations.store';
+	import { translationsStore } from '$lib/stores/translations.store';
+	import { meStore } from '$lib/stores/me.store';
+	import DropdownIcon from '$lib/assets/images/icons/DropdownIcon.svelte';
 
-	let loggedIn: boolean = true;
+	$: loggedIn = $meStore ? true : false;
 	let showProfileOptions: boolean = false;
 </script>
 
-<div class="mt-auto border-t border-b border-b-default/60 px-6 py-6">
+<div class="mt-auto border-t border-b border-b-default/60 px-4 py-4 sm:px-6 sm:py-6">
 	<div
 		class="
             rounded-xl
             bg-s-inverse
-            px-4
-            py-3
-            transition-colors
-            duration-200
+            p-3
         "
 	>
 		<button
@@ -31,8 +30,8 @@
                     items-center
                     gap-3
                     rounded-lg
-                    px-3
-                    py-2
+                    px-1
+                    py-1.5
                     transition-colors
                     duration-200
                     hover:bg-s-inverse/90
@@ -42,27 +41,31 @@
 		>
 			{#if loggedIn}
 				<img
-					src=""
-					alt={$translationsStore.generalTexts.profileLoggedAltText}
-					class="
-                        h-9
-                        w-9
-                        rounded-full
-                        bg-s-default/20
-                        object-cover
-                    "
+					class={`
+						h-10
+						w-10
+						sm:h-12
+						sm:w-12
+						rounded-full
+						border
+						object-cover
+						p-1
+						text-brand-primary
+					`}
+					src={$meStore?.images[1]?.url}
+					alt={$meStore?.display_name}
 				/>
 
 				<div class="min-w-0 text-left">
-					<p class="text-sm leading-tight font-medium text-t-inverse">Nome</p>
+					<p class="text-sm leading-tight font-semibold text-t-inverse">{$meStore?.display_name}</p>
 
-					<p class="truncate text-xs text-t-inverse/70">Email</p>
+					<p class="truncate text-xs text-t-inverse/70">{$meStore?.email}</p>
 				</div>
 			{:else}
 				<ProfileIcon
 					iconSvgClass="
-                        h-9
-                        w-9
+                        h-8.5
+                        w-8.5
                         text-t-inverse
                         transition-colors
                         duration-200
@@ -73,12 +76,46 @@
 
 				<p class="text-sm font-medium text-t-inverse">Entrar ou criar conta</p>
 			{/if}
+
+			<DropdownIcon 
+				iconSvgClass="
+					ml-auto
+					h-6
+					w-6
+					text-t-inverse/70
+					transition-all
+					{showProfileOptions ? 'rotate-180' : ''}
+				"
+				iconAltText={$translationsStore.generalTexts.dropdownAriaLabel} />
 		</button>
 
 		{#if showProfileOptions}
-			<div class="my-4 h-px w-full bg-s-default/30"></div>
+			<div class="my-6 h-px w-full bg-s-default/30"></div>
 
 			<AsideProfileItems {loggedIn} />
+
+			<div class="my-6 h-px w-full bg-s-default/30"></div>
+
+			<button
+				class="
+					w-full
+					cursor-pointer
+					rounded-lg
+					bg-status-error
+					px-3
+					py-2
+					font-semibold
+					text-t-inverse
+					transition-all
+					hover:bg-status-error/20
+				"
+				on:click={() => {
+					showProfileOptions = false;
+					meStore.set(undefined);
+				}}
+			>
+				{$translationsStore.generalTexts.profileLoggedItem3}
+			</button>
 		{/if}
 	</div>
 </div>

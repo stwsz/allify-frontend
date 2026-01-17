@@ -3,8 +3,8 @@
 	import { browser } from '$app/environment';
 
 	// Stores
-	import languageStore from '$lib/stores/language.store';
-	import translationsStore from '$lib/stores/translations.store';
+	import { languageStore } from '$lib/stores/language.store';
+	import { translationsStore } from '$lib/stores/translations.store';
 
 	// Assets
 	import englishFlag from '$lib/assets/images/icons/flags/united-states-icon.webp';

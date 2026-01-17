@@ -1,6 +1,6 @@
 <script lang="ts">
-	// Svelte
-	import { page } from '$app/stores';
+    // Svelte
+    import { page } from '$app/stores';
 
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
@@ -23,9 +23,8 @@
 
 <nav
 	aria-label={$translationsStore.generalTexts.headerNavigationAriaLabel}
-	class="hidden lg:block"
 >
-	<ul class="flex items-center gap-6 lg:gap-12">
+	<ul class="flex flex-col gap-8 px-8 py-12">
 		{#each navItems as item}
 			<li class="overflow-y-hidden">
 				<a
