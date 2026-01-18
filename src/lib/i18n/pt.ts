@@ -84,5 +84,12 @@ export const pt = {
 		devicesSectionHeading1: 'Leve sua música com você',
 		devicesSectionParagraph1:
 			'Acesse seus dados musicais de qualquer lugar e em qualquer dispositivo, com uma experiência fluida, consistente e intuitiva.'
+	},
+	myMusicalProfilePage: {
+		title: 'Meu Perfil Musical | Allify',
+		myMusicalProfilePageMostListenedArtistsHeading1: 'Seus artistas favoritos',
+		myMusicalProfilePageMostListenedArtistsHeading2: 'Seu artista mais ouvido',
+		myMusicalProfilePageMostListenedArtistsPlace: 'º lugar',
+		myMusicalProfilePageMostListenedArtistsFollowers: 'seguidores',
 	}
 };

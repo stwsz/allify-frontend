@@ -1,14 +1,14 @@
 import type { RequestHandler } from '@sveltejs/kit';
 
-export const POST: RequestHandler = async ({ request }) => {
+export const GET: RequestHandler = async ({ cookies }) => {
 	try {
-		const { token } = await request.json();
+		const token = cookies.get('spotify_access_token');
 
 		if (!token) {
-			return new Response('Access token is required', { status: 400 });
+			return new Response('No Spotify access token found', { status: 401 });
 		}
 
-		const response = await fetch('https://api.spotify.com/v1/me/top/artists', {
+		const response = await fetch('https://api.spotify.com/v1/me/top/artists?offset=0&limit=5&locale=*', {
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer ${token}`
@@ -22,7 +22,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 		const data = await response.json();
 
-		return new Response(JSON.stringify(data), {
+		return new Response(JSON.stringify(data.items), {
 			status: 200,
 			headers: { 'Content-Type': 'application/json' }
 		});
