@@ -1,16 +1,20 @@
 <script lang="ts">
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
+	import { loadingAfterConnectionStore } from '$lib/stores/loadingAfterConnection.store';
+	import { meStore } from '$lib/stores/me.store';
 
 	// Props
 	export let loggedIn: boolean;
 
 	let notLoggedItems = [
 		{
+			streaming: 'spotify',
 			text: $translationsStore.generalTexts.profileNotLoggedItem1,
 			href: '/api/spotify/auth/login'
 		},
 		{
+			streaming: 'deezer',
 			text: $translationsStore.generalTexts.profileNotLoggedItem2,
 			href: '/'
 		}
@@ -43,12 +47,22 @@
 	{:else}
 		{#each notLoggedItems as item}
 			<li class="w-full">
-				<a
-					href={item.href}
-					class="block w-full rounded-lg px-4 py-3 text-xs text-t-inverse transition-colors duration-150 hover:bg-s-muted/30"
+				<button
+					on:click={(e) => {
+						if ($meStore !== undefined) {
+							e.preventDefault();
+						}
+
+						loadingAfterConnectionStore.set({
+							loading: true,
+							streamingPlatform: item.streaming as 'spotify' | 'deezer'
+						});
+						window.location.href = item.href;
+					}}
+					class="block w-full cursor-pointer rounded-lg px-4 py-3 text-left text-xs text-t-inverse transition-colors duration-150 hover:bg-s-muted/30"
 				>
 					{@html item.text}
-				</a>
+				</button>
 			</li>
 		{/each}
 	{/if}

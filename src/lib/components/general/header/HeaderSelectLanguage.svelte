@@ -26,7 +26,7 @@
 	];
 
 	$: selectedLanguage =
-		languageOptions.find((lang) => lang.code === $languageStore) ?? languageOptions[0];
+		languageOptions.find((lang) => lang.code === $languageStore) ?? languageOptions[1];
 </script>
 
 <div class="relative inline-block">

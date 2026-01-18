@@ -44,13 +44,13 @@
 					class={`
 						h-10
 						w-10
-						sm:h-12
-						sm:w-12
 						rounded-full
 						border
 						object-cover
 						p-1
 						text-brand-primary
+						sm:h-12
+						sm:w-12
 					`}
 					src={$meStore?.images[1]?.url}
 					alt={$meStore?.display_name}
@@ -74,10 +74,10 @@
 					color="currentColor"
 				/>
 
-				<p class="text-sm font-medium text-t-inverse">Entrar ou criar conta</p>
+				<p class="text-sm font-medium text-t-inverse">{$translationsStore.generalTexts.cardProfileAsideMenuParagraph1}</p>
 			{/if}
 
-			<DropdownIcon 
+			<DropdownIcon
 				iconSvgClass="
 					ml-auto
 					h-6
@@ -86,7 +86,8 @@
 					transition-all
 					{showProfileOptions ? 'rotate-180' : ''}
 				"
-				iconAltText={$translationsStore.generalTexts.dropdownAriaLabel} />
+				iconAltText={$translationsStore.generalTexts.dropdownAriaLabel}
+			/>
 		</button>
 
 		{#if showProfileOptions}
@@ -107,7 +108,7 @@
 					font-semibold
 					text-t-inverse
 					transition-all
-					hover:bg-status-error/20
+					hover:bg-status-error/80
 				"
 				on:click={() => {
 					showProfileOptions = false;

@@ -32,6 +32,7 @@ export const de = {
 		burguerMenuAltText: 'Navigationsmenü öffnen',
 		profileLoggedAltText: 'Benutzerprofilbild',
 		closeMenuAltText: 'Navigationsmenü schließen',
+		cardProfileAsideMenuParagraph1: 'Anmelden oder Konto erstellen',
 		footerFirstSectionText1:
 			'Wir verwandeln Musikdaten in Entdeckungen, Rankings und neue Wege, Musik zu hören.',
 		footerFirstSectionText2: 'Ein Produkt von',
@@ -47,7 +48,13 @@ export const de = {
 		footerColumn3Item1: 'Datenschutzrichtlinie',
 		footerColumn3Item2: 'Nutzungsbedingungen',
 		footerColumn3Item3: 'Datennutzung',
-		stillInDevelopmentText: 'Noch in Entwicklung'
+		stillInDevelopmentText: 'Noch in Entwicklung',
+		loadingComponentHeading1: 'Verbinden...',
+		loadingComponentSpotifyParagraph1:
+			'Suche deine Informationen von <span class="font-semibold text-[#1fd25e]">Spotify</span>',
+		loadingComponentDeezerParagraph1:
+			'Suche deine Informationen von <span class="font-semibold text-[#a238ff]">Deezer</span>',
+		loadingComponentAriaLabel: 'Ladeanimation'
 	},
 	homePage: {
 		title: 'Alles über deine Musik, an einem Ort verbunden | Allify',

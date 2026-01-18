@@ -32,6 +32,7 @@ export const en = {
 			'Log in with <span class="ml-1 font-semibold text-[#a238ff]">Deezer</span>',
 		burguerMenuAltText: 'Open navigation menu',
 		closeMenuAltText: 'Close navigation menu',
+		cardProfileAsideMenuParagraph1: 'Log in or create account',
 		footerFirstSectionText1:
 			'Transforming music data into discoveries, rankings, and new ways of listening to music.',
 		footerFirstSectionText2: 'A product by',
@@ -47,7 +48,13 @@ export const en = {
 		footerColumn3Item1: 'Privacy Policy',
 		footerColumn3Item2: 'Terms of Service',
 		footerColumn3Item3: 'Data Usage',
-		stillInDevelopmentText: 'Still in development'
+		stillInDevelopmentText: 'Still in development',
+		loadingComponentHeading1: 'Connecting...',
+		loadingComponentSpotifyParagraph1:
+			'Fetching your information from <span class="font-semibold text-[#1fd25e]">Spotify</span>',
+		loadingComponentDeezerParagraph1:
+			'Fetching your information from <span class="font-semibold text-[#a238ff]">Deezer</span>',
+		loadingComponentAriaLabel: 'Loading animation'
 	},
 	homePage: {
 		title: 'All about your music, connected in one place | Allify',
