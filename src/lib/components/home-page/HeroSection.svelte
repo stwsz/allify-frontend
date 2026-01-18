@@ -4,7 +4,10 @@
 	import { meStore } from '$lib/stores/me.store';
 </script>
 
-<section class="flex items-center px-8 py-12 sm:px-12 lg:justify-between lg:py-32 2xl:px-32">
+<section
+	class="flex bg-s-default items-center px-8 py-12 sm:px-12 lg:justify-between lg:py-32 2xl:px-32"
+	id="hero-section"
+>
 	<div class="flex max-w-full flex-col items-center gap-8 lg:max-w-190 lg:items-start">
 		<h1 class="text-center text-4xl text-t-primary lg:text-left lg:text-5xl">
 			{$translationsStore.homePage.homePageHeroSectionHeading1}
@@ -25,7 +28,7 @@
 
 		<a
 			class="mt-6 w-90 max-w-90 cursor-pointer rounded-lg bg-brand-primary py-5 text-center text-sm font-medium text-t-inverse shadow-md transition-all hover:scale-105 hover:bg-brand-primary-dark"
-			href="/my-musical-profile"
+			href={`${$meStore !== undefined ? '/my-musical-profile' : '#connect-platforms'}`}
 			aria-label={$meStore !== undefined
 				? $translationsStore.homePage.homePageHeroSectionButton1v2AriaLabel
 				: $translationsStore.homePage.homePageHeroSectionButton1AriaLabel}

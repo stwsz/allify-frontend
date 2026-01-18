@@ -4,7 +4,8 @@
 </script>
 
 <section
-	class="flex flex-col-reverse items-center gap-16 py-12 sm:px-12 lg:flex-row lg:justify-between lg:py-32 2xl:px-32"
+	class="flex flex-col-reverse bg-s-default items-center gap-16 py-12 sm:px-12 lg:flex-row lg:justify-between lg:py-32 2xl:px-32"
+	id="devices-section"
 >
 	<!-- Imagens still in development -->
 	<div class="flex h-72 w-2/5 flex-col items-center justify-center rounded-md bg-gray-800">

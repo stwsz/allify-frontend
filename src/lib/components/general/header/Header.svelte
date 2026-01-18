@@ -1,7 +1,4 @@
 <script lang="ts">
-	// Svelte
-	import { page } from '$app/stores';
-
 	// Assets
 	import BurguerMenuIcon from '$lib/assets/images/icons/BurgerMenuIcon.svelte';
 	import AllifyLogoColorful from '$lib/assets/images/logos/AllifyLogoColorful.svelte';
@@ -20,7 +17,7 @@
 </script>
 
 <header
-	class="relative flex items-center justify-between px-8 py-8 shadow-sm sm:px-12 lg:py-12 2xl:px-32"
+	class="relative flex bg-s-default items-center justify-between px-8 py-8 shadow-sm sm:px-12 lg:py-12 2xl:px-32"
 >
 	<div class="flex items-center gap-4 2xl:gap-20">
 		<AllifyLogoColorful
@@ -28,7 +25,7 @@
 			logoAltText={$translationsStore.generalTexts.logoColorfulAltText}
 		/>
 
-		<HeaderNavigation currentPage={$page.url.pathname} isAsideMenu={false} />
+		<HeaderNavigation />
 	</div>
 
 	<HeaderLanguageAndProfile />

@@ -6,6 +6,7 @@
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
 	import { meStore } from '$lib/stores/me.store';
+	import { loadingAfterConnectionStore } from '$lib/stores/loadingAfterConnection.store';
 
 	// Types
 	import type { CardPlatformType } from '$lib/types/CardPlatform.type';
@@ -23,9 +24,21 @@
 		<div class="flex items-center justify-between font-medium">
 			<svelte:component this={platform.icon} />
 
-			<a
-				href="/"
-				class={`flex items-center gap-1 rounded-lg border px-3 py-1.5 text-sm transition-all ${
+			<button
+				on:click={(e) => {
+					if ($meStore !== undefined && $meStore.streaming === platformKey) {
+						e.preventDefault();
+
+						return;
+					}
+					window.location.href = `/api/${platformKey}/auth/login`;
+
+					loadingAfterConnectionStore.set({
+						loading: true,
+						streamingPlatform: platformKey as 'spotify' | 'deezer'
+					});
+				}}
+				class={`flex cursor-pointer items-center gap-1 rounded-lg border px-3 py-1.5 text-sm transition-all ${
 					$meStore?.streaming === platformKey
 						? platformKey === 'spotify'
 							? 'border-[#1fd25e] text-[#1fd25e] hover:border-[#1fd25e] hover:text-[#1fd25e]'
@@ -46,7 +59,7 @@
 				{$meStore?.streaming === platformKey
 					? $translationsStore.homePage.connectPlatformCardPlatformConnectedButton
 					: $translationsStore.homePage.connectPlatformCardPlatformConnectButton}
-			</a>
+			</button>
 		</div>
 
 		<div class="h-36 space-y-3 lg:space-y-4">

@@ -52,5 +52,5 @@ export const GET = async ({ url, cookies }) => {
 
 	cookies.delete('spotify_state', { path: '/' });
 
-	throw redirect(302, '/');
+	throw redirect(302, '/my-musical-profile');
 };

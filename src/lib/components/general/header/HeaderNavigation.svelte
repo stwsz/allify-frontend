@@ -21,10 +21,7 @@
 	];
 </script>
 
-<nav
-	aria-label={$translationsStore.generalTexts.headerNavigationAriaLabel}
-	class="hidden lg:block"
->
+<nav aria-label={$translationsStore.generalTexts.headerNavigationAriaLabel} class="hidden lg:block">
 	<ul class="flex items-center gap-6 lg:gap-12">
 		{#each navItems as item}
 			<li class="overflow-y-hidden">

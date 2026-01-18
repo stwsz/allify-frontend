@@ -2,6 +2,7 @@
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
 	import { meStore } from '$lib/stores/me.store';
+	import { loadingAfterConnectionStore } from '$lib/stores/loadingAfterConnection.store';
 
 	// Props
 	export let loggedIn: boolean;
@@ -9,10 +10,12 @@
 
 	$: notLoggedItems = [
 		{
+			streaming: 'spotify',
 			text: $translationsStore.generalTexts.profileNotLoggedItem1,
 			href: '/api/spotify/auth/login'
 		},
 		{
+			streaming: 'deezer',
 			text: $translationsStore.generalTexts.profileNotLoggedItem2,
 			href: '/'
 		}
@@ -72,17 +75,17 @@
 
 		<button
 			class="
-				w-full
-				cursor-pointer
-				rounded-lg
-				bg-status-error/10
-				px-3
-				py-2
-				font-semibold
-				text-status-error
-				transition-all
-				hover:bg-status-error/20
-			"
+					w-full
+					cursor-pointer
+					rounded-lg
+					bg-status-error
+					px-3
+					py-2
+					font-semibold
+					text-t-inverse
+					transition-all
+					hover:bg-status-error/80
+				"
 			on:click={() => {
 				showProfileOptions = false;
 				meStore.set(undefined);
@@ -94,12 +97,22 @@
 		<ul class="space-y-1">
 			{#each notLoggedItems as item}
 				<li class="rounded-lg transition-all hover:bg-s-muted">
-					<a
-						href={item.href}
-						class="flex w-full items-center px-3 py-2 transition-all hover:translate-x-0.5"
+					<button
+						on:click={(e) => {
+							if ($meStore !== undefined) {
+								e.preventDefault();
+							}
+
+							loadingAfterConnectionStore.set({
+								loading: true,
+								streamingPlatform: item.streaming as 'spotify' | 'deezer'
+							});
+							window.location.href = item.href;
+						}}
+						class="flex w-full cursor-pointer items-center px-3 py-2 transition-all hover:translate-x-0.5"
 					>
 						{@html item.text}
-					</a>
+					</button>
 				</li>
 			{/each}
 		</ul>
