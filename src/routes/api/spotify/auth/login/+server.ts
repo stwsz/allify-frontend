@@ -2,7 +2,7 @@ import { redirect } from '@sveltejs/kit';
 import { SPOTIFY_CLIENT_ID, SPOTIFY_REDIRECT_URI } from '$env/static/private';
 
 export const GET = async ({ cookies }) => {
-	const scope = 'user-read-email user-read-private';
+	const scope = 'user-read-email user-read-private user-top-read';
 	const state = crypto.randomUUID();
 
 	cookies.set('spotify_state', state, {
