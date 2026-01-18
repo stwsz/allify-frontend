@@ -34,8 +34,6 @@ export const GET = async ({ url, cookies }) => {
 
 	const tokenData = await tokenRes.json();
 
-	console.log(tokenData);
-
 	cookies.set('spotify_access_token', tokenData.access_token, {
 		httpOnly: true,
 		secure: process.env.NODE_ENV === 'production',

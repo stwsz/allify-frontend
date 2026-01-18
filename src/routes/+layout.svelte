@@ -33,8 +33,6 @@
 		} catch {
 			meStore.set(undefined);
 		}
-
-		console.log($meStore);
 	};
 
 	onMount(() => {
