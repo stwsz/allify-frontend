@@ -14,76 +14,98 @@
 	let showProfileOptions: boolean = false;
 </script>
 
-<div class="mt-auto border-t border-b border-b-default/60 px-4 py-4 sm:px-6 sm:py-6">
+<div class="mt-auto border-t border-b-muted/10 px-4 py-4 sm:px-5 sm:py-5">
 	<div
 		class="
-            rounded-xl
-            bg-s-inverse
-            p-3
-        "
+			rounded-xl
+			border
+			border-b-muted/10
+			bg-s-default/95
+			shadow-sm
+			backdrop-blur-md
+			transition-all
+			duration-200
+			hover:shadow-md
+		"
 	>
 		<button
 			class="
-                    flex
-                    w-full
-                    cursor-pointer
-                    items-center
-                    gap-3
-                    rounded-lg
-                    px-1
-                    py-1.5
-                    transition-colors
-                    duration-200
-                    hover:bg-s-inverse/90
-                "
+				group
+				flex
+				w-full
+				cursor-pointer
+				items-center
+				gap-3
+				px-3
+				py-3
+				transition-all
+				duration-200
+				ease-out
+				active:scale-[0.98]
+			"
 			on:click={() => (showProfileOptions = !showProfileOptions)}
 			aria-label="Toggle profile items"
 		>
 			{#if loggedIn}
 				<img
-					class={`
+					class="
 						h-10
 						w-10
 						rounded-full
 						border
+						border-b-default
 						object-cover
-						p-1
-						text-brand-primary
-						sm:h-12
-						sm:w-12
-					`}
+						sm:h-11
+						sm:w-11
+					"
 					src={$meStore?.images[1]?.url}
 					alt={$meStore?.display_name}
 				/>
 
-				<div class="min-w-0 text-left">
-					<p class="text-sm leading-tight font-semibold text-t-inverse">{$meStore?.display_name}</p>
-
-					<p class="truncate text-xs text-t-inverse/70">{$meStore?.email}</p>
+				<div class="min-w-0 flex-1 text-left">
+					<p class="text-sm leading-tight font-semibold text-t-primary">
+						{$meStore?.display_name}
+					</p>
+					<p class="mt-0.5 truncate text-xs text-t-muted">
+						{$meStore?.email}
+					</p>
 				</div>
 			{:else}
-				<ProfileIcon
-					iconSvgClass="
-                        h-8.5
-                        w-8.5
-                        text-t-inverse
-                        transition-colors
-                        duration-200
-                    "
-					iconAltText={$translationsStore.generalTexts.profileNotLoggedAltText}
-					color="currentColor"
-				/>
+				<div
+					class="
+						flex
+						h-10
+						w-10
+						items-center
+						justify-center
+						rounded-full
+						bg-s-muted
+						transition-colors
+						duration-200
+						group-hover:bg-s-muted/80
+						sm:h-11
+						sm:w-11
+					"
+				>
+					<ProfileIcon
+						iconSvgClass="h-7 w-7 text-brand-primary transition-colors duration-200 group-hover:text-brand-primary-dark"
+						iconAltText={$translationsStore.generalTexts.profileNotLoggedAltText}
+						color="currentColor"
+					/>
+				</div>
 
-				<p class="text-sm font-medium text-t-inverse">{$translationsStore.generalTexts.cardProfileAsideMenuParagraph1}</p>
+				<p class="flex-1 text-sm font-medium text-t-primary">
+					{$translationsStore.generalTexts.cardProfileAsideMenuParagraph1}
+				</p>
 			{/if}
 
 			<DropdownIcon
 				iconSvgClass="
-					ml-auto
-					h-6
-					w-6
-					text-t-inverse/70
-					transition-all
+					h-5
+					w-5
+					text-t-muted
+					transition-transform
+					duration-200
 					{showProfileOptions ? 'rotate-180' : ''}
 				"
 				iconAltText={$translationsStore.generalTexts.dropdownAriaLabel}
@@ -91,32 +113,38 @@
 		</button>
 
 		{#if showProfileOptions}
-			<div class="my-6 h-px w-full bg-s-default/30"></div>
+			<div class="px-3 pb-3">
+				<div class="mb-3 h-px bg-b-muted/10"></div>
 
-			<AsideProfileItems {loggedIn} />
+				<AsideProfileItems {loggedIn} />
 
-			<div class="my-6 h-px w-full bg-s-default/30"></div>
+				{#if loggedIn}
+					<div class="my-3 h-px bg-b-muted/10"></div>
 
-			<button
-				class="
-					w-full
-					cursor-pointer
-					rounded-lg
-					bg-status-error
-					px-3
-					py-2
-					font-semibold
-					text-t-inverse
-					transition-all
-					hover:bg-status-error/80
-				"
-				on:click={() => {
-					showProfileOptions = false;
-					meStore.set(undefined);
-				}}
-			>
-				{$translationsStore.generalTexts.profileLoggedItem3}
-			</button>
+					<button
+						class="
+							w-full
+							cursor-pointer
+							rounded-lg
+							bg-status-error
+							px-3
+							py-2
+							text-sm
+							font-semibold
+							text-t-inverse
+							transition-all
+							duration-200
+							hover:bg-status-error/80
+						"
+						on:click={() => {
+							showProfileOptions = false;
+							meStore.set(undefined);
+						}}
+					>
+						{$translationsStore.generalTexts.profileLoggedItem3}
+					</button>
+				{/if}
+			</div>
 		{/if}
 	</div>
 </div>

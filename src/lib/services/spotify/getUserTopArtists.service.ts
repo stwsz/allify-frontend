@@ -15,7 +15,6 @@ export async function getUserTopArtists(token: string) {
 
 		return artistData;
 	} catch (error) {
-		console.error('Failed to fetch Spotify access token', error);
 		throw error;
 	}
 }

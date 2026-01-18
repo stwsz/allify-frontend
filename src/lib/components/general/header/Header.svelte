@@ -6,7 +6,7 @@
 	// Components
 	import HeaderNavigation from '$lib/components/general/header/HeaderNavigation.svelte';
 	import HeaderLanguageAndProfile from '$lib/components/general/header/HeaderLanguageAndProfile.svelte';
-	import AsideMenuNavigation from '$lib/components/general/menus/aside-menu/AsideMenuNavigation.svelte';
+	import AsideMenu from '$lib/components/general/menus/aside-menu/AsideMenu.svelte';
 	import HeaderSelectLanguage from '$lib/components/general/header/HeaderSelectLanguage.svelte';
 
 	// Stores
@@ -17,7 +17,7 @@
 </script>
 
 <header
-	class="relative flex bg-s-default items-center justify-between px-8 py-8 shadow-sm sm:px-12 lg:py-12 2xl:px-32"
+	class="relative flex items-center justify-between bg-s-default px-8 py-8 shadow-sm sm:px-12 lg:py-12 2xl:px-32"
 >
 	<div class="flex items-center gap-4 2xl:gap-20">
 		<AllifyLogoColorful
@@ -50,6 +50,6 @@
 	</div>
 
 	{#if isAsideMenuOpen}
-		<AsideMenuNavigation bind:isAsideMenuOpen />
+		<AsideMenu bind:isAsideMenuOpen />
 	{/if}
 </header>
