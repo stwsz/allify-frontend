@@ -4,7 +4,7 @@
 	import DeezerIcon from '$lib/assets/images/icons/streamings/DeezerIcon.svelte';
 
 	// Components
-	import Loading from '$lib/assets/images/animations/DotsLoading.svelte';
+	import DotsLoading from '$lib/assets/images/animations/DotsLoading.svelte';
 
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
@@ -45,7 +45,7 @@
 			</div>
 
 			<div class="relative">
-				<Loading
+				<DotsLoading
 					streamingPlatform={streamingPlatform ? streamingPlatform : undefined}
 					animationAltText={$translationsStore.generalTexts.loadingComponentAriaLabel}
 				/>

@@ -2,13 +2,15 @@
 	// Assets
 	import ProfileIcon from '$lib/assets/images/icons/ProfileIcon.svelte';
 
+	// Assets
+	import ArrowIcon from '$lib/assets/images/icons/ArrowIcon.svelte';
+
 	// Components
 	import AsideProfileItems from '$lib/components/general/menus/aside-menu/AsideProfileItems.svelte';
 
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
 	import { meStore } from '$lib/stores/me.store';
-	import DropdownIcon from '$lib/assets/images/icons/DropdownIcon.svelte';
 
 	$: loggedIn = $meStore ? true : false;
 	let showProfileOptions: boolean = false;
@@ -99,7 +101,7 @@
 				</p>
 			{/if}
 
-			<DropdownIcon
+			<ArrowIcon
 				iconSvgClass="
 					h-5
 					w-5

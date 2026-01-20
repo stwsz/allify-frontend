@@ -1,5 +1,7 @@
 {
 	"files.associations": {
 		"*.css": "tailwindcss"
-	}
+	},
+	"snyk.advanced.organization": "c590febd-24d4-45ee-8ae8-a96b6603cfd2",
+	"snyk.advanced.autoSelectOrganization": true
 }

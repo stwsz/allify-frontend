@@ -11,7 +11,7 @@
 	import germanyFlag from '$lib/assets/images/icons/flags/germany-icon.webp';
 	import portugueseFlag from '$lib/assets/images/icons/flags/brazil-icon.webp';
 	import spanishFlag from '$lib/assets/images/icons/flags/spain-icon.webp';
-	import DropdownIcon from '$lib/assets/images/icons/DropdownIcon.svelte';
+	import ArrowIcon from '$lib/assets/images/icons/ArrowIcon.svelte';
 	import SelectedIcon from '$lib/assets/images/icons/SelectedIcon.svelte';
 
 	// Props
@@ -66,7 +66,7 @@
 			</p>
 		</div>
 
-		<DropdownIcon
+		<ArrowIcon
 			iconSvgClass={`w-5 h-5 pointer-events-none transition-transform duration-200
 				text-t-muted
 				${openLanguageDropdown ? 'rotate-180' : ''}`}
