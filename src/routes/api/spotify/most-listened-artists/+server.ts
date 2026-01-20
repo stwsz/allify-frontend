@@ -8,12 +8,15 @@ export const GET: RequestHandler = async ({ cookies }) => {
 			return new Response('No Spotify access token found', { status: 401 });
 		}
 
-		const response = await fetch('https://api.spotify.com/v1/me/top/artists?offset=0&limit=5&locale=*', {
-			method: 'GET',
-			headers: {
-				Authorization: `Bearer ${token}`
+		const response = await fetch(
+			'https://api.spotify.com/v1/me/top/artists?offset=0&limit=5&locale=*',
+			{
+				method: 'GET',
+				headers: {
+					Authorization: `Bearer ${token}`
+				}
 			}
-		});
+		);
 
 		if (!response.ok) {
 			const err = await response.text();

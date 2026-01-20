@@ -7,7 +7,7 @@
 	// Props
 	export let loggedIn: boolean;
 
-	let notLoggedItems = [
+	$: notLoggedItems = [
 		{
 			streaming: 'spotify',
 			text: $translationsStore.generalTexts.profileNotLoggedItem1,
@@ -20,7 +20,7 @@
 		}
 	];
 
-	let loggedItems = [
+	$: loggedItems = [
 		{
 			text: $translationsStore.generalTexts.profileLoggedItem1,
 			href: '/'

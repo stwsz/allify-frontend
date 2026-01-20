@@ -90,6 +90,6 @@ export const pt = {
 		myMusicalProfilePageMostListenedArtistsHeading1: 'Seus artistas favoritos',
 		myMusicalProfilePageMostListenedArtistsHeading2: 'Seu artista mais ouvido',
 		myMusicalProfilePageMostListenedArtistsPlace: 'º lugar',
-		myMusicalProfilePageMostListenedArtistsFollowers: 'seguidores',
+		myMusicalProfilePageMostListenedArtistsFollowers: 'seguidores'
 	}
 };
