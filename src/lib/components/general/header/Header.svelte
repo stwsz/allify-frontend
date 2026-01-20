@@ -5,15 +5,16 @@
 
 	// Components
 	import HeaderNavigation from '$lib/components/general/header/HeaderNavigation.svelte';
-	import HeaderLanguageAndProfile from '$lib/components/general/header/HeaderLanguageAndProfile.svelte';
 	import AsideMenu from '$lib/components/general/menus/aside-menu/AsideMenu.svelte';
 	import HeaderSelectLanguage from '$lib/components/general/header/HeaderSelectLanguage.svelte';
+	import HeaderProfile from '$lib/components/general/header/HeaderProfile.svelte';
 
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
 
 	let isAsideMenuOpen = false;
 	let openLanguageDropdown = false;
+	let showProfileOptions = false;
 </script>
 
 <header
@@ -28,7 +29,11 @@
 		<HeaderNavigation />
 	</div>
 
-	<HeaderLanguageAndProfile />
+	<div class="hidden gap-6 lg:flex lg:items-center">
+		<HeaderSelectLanguage bind:openLanguageDropdown bind:showProfileOptions />
+
+		<HeaderProfile bind:showProfileOptions bind:openLanguageDropdown />
+	</div>
 
 	<div class="flex items-center gap-4 lg:hidden">
 		<HeaderSelectLanguage bind:openLanguageDropdown />

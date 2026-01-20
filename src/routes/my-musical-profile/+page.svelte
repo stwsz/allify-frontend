@@ -5,7 +5,7 @@
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
 
-	const itemsType: Array<'artists' | 'musics' | 'albums'> = ['artists'];
+	const itemsType: Array<'artists' | 'tracks' | 'albums'> = ['artists', 'tracks'];
 </script>
 
 <svelte:head>
