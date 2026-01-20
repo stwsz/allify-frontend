@@ -88,8 +88,8 @@ export const es = {
 	myMusicalProfilePage: {
 		title: 'Mi Perfil Musical | Allify',
 		myMusicalProfilePageMostListenedArtistsHeading1: 'Tus artistas favoritos',
-		myMusicalProfilePageMostListenedArtistsHeading2: 'Tu artista más escuchado',
-		myMusicalProfilePageMostListenedArtistsPlace: 'º lugar',
-		myMusicalProfilePageMostListenedArtistsFollowers: 'seguidores'
+		myMusicalProfilePageMostListenedArtistsFollowers: 'seguidores',
+		myMusicalProfilePageMostListenedTracksHeading1: 'Tus canciones favoritas',
+		myMusicalProfilePageMostListenedItemPlace: 'º lugar',
 	}
 };

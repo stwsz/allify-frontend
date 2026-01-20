@@ -6,15 +6,17 @@
 	import DotsLoading from '$lib/assets/images/animations/DotsLoading.svelte';
 
 	// Components
-	import TopItem from './TopItem.svelte';
+	import TopArtistItem from './TopArtistItem.svelte';
+	import MostListenedArtistItem from './MostListenedArtistItem.svelte';
+	import TopTrackItem from './TopTrackItem.svelte';
+	import MostListenedTrackItem from './MostListenedTrackItem.svelte';
 	import CarouselButton from './CarouselButton.svelte';
-	import MostListenedItem from './MostListenedItem.svelte';
-
+	
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
 
 	// Props
-	export let mostListenedType: 'artists' | 'musics' | 'albums' = 'artists';
+	export let mostListenedType: 'artists' | 'tracks' | 'albums' = 'artists';
 
 	let mostListenedItems: any[] = [];
 	let topListened: any = null;
@@ -25,10 +27,9 @@
 
 	async function fetchMostListenedArtists() {
 		try {
-			const res = await fetch('/api/spotify/most-listened-artists');
+			const res = await fetch(`/api/spotify/most-listened-${mostListenedType}`);
 
 			if (!res.ok) {
-				console.error('Failed to fetch most listened artists');
 				return;
 			}
 
@@ -53,7 +54,6 @@
 
 	function scrollNext() {
 		if (carousel) {
-			// Scroll responsivo baseado no tamanho da tela
 			const scrollAmount = window.innerWidth < 640 ? 280 : window.innerWidth < 1024 ? 350 : 420;
 			carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 		}
@@ -83,8 +83,14 @@
 	class="px-8 py-8 sm:px-8 sm:py-12 lg:px-12 lg:pt-16 2xl:px-32"
 	id="most-listened-artists-section"
 >
-	<h2 class="mb-4.5 text-2xl font-medium text-t-primary sm:mb-8 sm:text-3xl lg:mb-10 lg:text-4xl">
-		{$translationsStore.myMusicalProfilePage.myMusicalProfilePageMostListenedArtistsHeading1}
+	<h2 class="mb-4.5 text-2xl font-medium text-t-primary sm:mb-8 sm:text-3xl lg:mb-8 lg:text-3xl">
+		{#if mostListenedType === 'artists'}
+			{$translationsStore.myMusicalProfilePage.myMusicalProfilePageMostListenedArtistsHeading1}
+		{:else if mostListenedType === 'tracks'}
+			{$translationsStore.myMusicalProfilePage.myMusicalProfilePageMostListenedTracksHeading1}
+		<!-- {:else if mostListenedType === 'albums'}
+			{$translationsStore.myMusicalProfilePage.myMusicalProfilePageMostListenedAlbumsHeading1} -->
+		{/if}
 	</h2>
 
 	{#if mostListenedItems.length > 0}
@@ -97,19 +103,29 @@
 				bind:this={carousel}
 				on:scroll={handleScroll}
 				id="carousel"
-				class="-mx-4 flex snap-x snap-mandatory items-end gap-4 overflow-x-auto scroll-smooth px-4 sm:mx-0 sm:gap-6 sm:px-0 lg:gap-8 lg:overflow-x-hidden xl:gap-12"
+				class="flex snap-x snap-mandatory items-end gap-4 overflow-x-auto scroll-smooth px-4 sm:mx-0 sm:gap-6 sm:px-0 lg:gap-8 lg:overflow-x-hidden xl:gap-12"
 			>
 				<div class="shrink-0 snap-start">
 					{#if mostListenedType === 'artists'}
-						<TopItem {topListened} />
+						<TopArtistItem topArtistItem={topListened} />
+					{:else if mostListenedType === 'tracks'}
+						<TopTrackItem topTrackItem={topListened} />
 					{/if}
 				</div>
 
-				{#each mostListenedItems.slice(1) as mostListenedItem, index}
-					<div class="shrink-0 snap-start">
-						<MostListenedItem {mostListenedItem} {index} />
-					</div>
-				{/each}
+				{#if mostListenedType === 'artists'}
+					{#each mostListenedItems.slice(1) as mostListenedArtistItem, index}
+						<div class="shrink-0 snap-start overflow-hidden">
+							<MostListenedArtistItem mostListenedArtistItem={mostListenedArtistItem} {index} />
+						</div>
+					{/each}
+				{:else if mostListenedType === 'tracks'}
+					{#each mostListenedItems.slice(1) as mostListenedTrackItem, index}
+						<div class="shrink-0 snap-start overflow-hidden">
+							<MostListenedTrackItem mostListenedTrackItem={mostListenedTrackItem} {index} />
+						</div>
+					{/each}
+				{/if}
 			</div>
 
 			{#if showNextButton}
