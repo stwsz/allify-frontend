@@ -1,5 +1,6 @@
 export const es = {
 	language: 'es',
+	locale: 'es-ES',
 	configuration: {
 		langAttribute: 'es_ES',
 		metaOgAndTwitterContent: 'Comprende tus hábitos musicales con datos reales.',

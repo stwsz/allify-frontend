@@ -1,7 +1,9 @@
 import type { RequestHandler } from '@sveltejs/kit';
 
-export const GET: RequestHandler = async ({ cookies }) => {
+export const POST: RequestHandler = async ({ request, cookies }) => {
 	try {
+		const { locale } = await request.json();
+
 		const token = cookies.get('spotify_access_token');
 
 		if (!token) {
@@ -9,7 +11,7 @@ export const GET: RequestHandler = async ({ cookies }) => {
 		}
 
 		const response = await fetch(
-			'https://api.spotify.com/v1/me/top/tracks?offset=0&limit=5&locale=*',
+			`https://api.spotify.com/v1/me/top/tracks?offset=0&limit=5&locale=${locale}`,
 			{
 				method: 'GET',
 				headers: {

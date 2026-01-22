@@ -28,17 +28,20 @@
 	let showPrevButton = false;
 	let showNextButton = true;
 
-	async function fetchMostListenedArtists() {
+	async function fetchMostListenedItems() {
 		try {
-			const res = await fetch(`/api/spotify/most-listened-${mostListenedType}`);
+			const reqMostListenedItems = await fetch(`/api/spotify/most-listened-${mostListenedType}`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ locale: $translationsStore.locale })
+			});
 
-			if (!res.ok) {
+			if (!reqMostListenedItems.ok) {
 				return;
 			}
 
-			const data = await res.json();
-
-			mostListenedItems = data;
+			const resMostListenedItems = await reqMostListenedItems.json();
+			mostListenedItems = resMostListenedItems;
 			topListened = mostListenedItems[0];
 		} catch (error) {
 			console.error('Error fetching most listened artists:', error);
@@ -74,7 +77,7 @@
 	}
 
 	onMount(() => {
-		fetchMostListenedArtists();
+		fetchMostListenedItems();
 
 		if (carousel) {
 			updateButtonVisibility();
