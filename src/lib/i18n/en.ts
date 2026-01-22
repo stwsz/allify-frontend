@@ -91,5 +91,8 @@ export const en = {
 		myMusicalProfilePageMostListenedArtistsFollowers: 'followers',
 		myMusicalProfilePageMostListenedTracksHeading1: 'Your favorite tracks',
 		myMusicalProfilePageMostListenedItemPlace: 'th place',
+		myMusicalProfilePageDetailedArtistInfoModalPopularity: 'Popularity',
+		myMusicalProfilePageDetailedArtistInfoModalGenre: 'Genres',
+		myMusicalProfilePageDetailedTracksInfoModalPopularity: 'Popularity'
 	}
 };

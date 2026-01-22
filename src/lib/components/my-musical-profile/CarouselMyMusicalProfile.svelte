@@ -11,12 +11,15 @@
 	import TopTrackItem from './TopTrackItem.svelte';
 	import MostListenedTrackItem from './MostListenedTrackItem.svelte';
 	import CarouselButton from './CarouselButton.svelte';
-	
+
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
 
 	// Props
 	export let mostListenedType: 'artists' | 'tracks' | 'albums' = 'artists';
+	export let choosedItemType: 'artist' | 'track' | 'album' | '';
+	export let showDetailedInfoModalVisible: boolean;
+	export let itemId: string;
 
 	let mostListenedItems: any[] = [];
 	let topListened: any = null;
@@ -80,7 +83,7 @@
 </script>
 
 <section
-	class="px-8 py-8 sm:px-8 sm:py-12 lg:px-12 lg:pt-16 2xl:px-32"
+	class={`px-8 py-8 sm:px-8 sm:py-12 lg:px-12 lg:pt-16 ${mostListenedType === 'tracks' ? 'lg:pb-28' : 'lg:pb-8'} 2xl:px-32`}
 	id="most-listened-artists-section"
 >
 	<h2 class="mb-4.5 text-2xl font-medium text-t-primary sm:mb-8 sm:text-3xl lg:mb-8 lg:text-3xl">
@@ -88,8 +91,6 @@
 			{$translationsStore.myMusicalProfilePage.myMusicalProfilePageMostListenedArtistsHeading1}
 		{:else if mostListenedType === 'tracks'}
 			{$translationsStore.myMusicalProfilePage.myMusicalProfilePageMostListenedTracksHeading1}
-		<!-- {:else if mostListenedType === 'albums'}
-			{$translationsStore.myMusicalProfilePage.myMusicalProfilePageMostListenedAlbumsHeading1} -->
 		{/if}
 	</h2>
 
@@ -107,22 +108,44 @@
 			>
 				<div class="shrink-0 snap-start">
 					{#if mostListenedType === 'artists'}
-						<TopArtistItem topArtistItem={topListened} />
+						<TopArtistItem
+							topArtistItem={topListened}
+							bind:choosedItemType
+							bind:itemId
+							bind:showDetailedInfoModalVisible
+						/>
 					{:else if mostListenedType === 'tracks'}
-						<TopTrackItem topTrackItem={topListened} />
+						<TopTrackItem
+							topTrackItem={topListened}
+							bind:choosedItemType
+							bind:itemId
+							bind:showDetailedInfoModalVisible
+						/>
 					{/if}
 				</div>
 
 				{#if mostListenedType === 'artists'}
 					{#each mostListenedItems.slice(1) as mostListenedArtistItem, index}
 						<div class="shrink-0 snap-start overflow-hidden">
-							<MostListenedArtistItem mostListenedArtistItem={mostListenedArtistItem} {index} />
+							<MostListenedArtistItem
+								{mostListenedArtistItem}
+								{index}
+								bind:choosedItemType
+								bind:itemId
+								bind:showDetailedInfoModalVisible
+							/>
 						</div>
 					{/each}
 				{:else if mostListenedType === 'tracks'}
 					{#each mostListenedItems.slice(1) as mostListenedTrackItem, index}
 						<div class="shrink-0 snap-start overflow-hidden">
-							<MostListenedTrackItem mostListenedTrackItem={mostListenedTrackItem} {index} />
+							<MostListenedTrackItem
+								{mostListenedTrackItem}
+								{index}
+								bind:choosedItemType
+								bind:itemId
+								bind:showDetailedInfoModalVisible
+							/>
 						</div>
 					{/each}
 				{/if}

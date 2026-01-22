@@ -1,7 +1,8 @@
 import { redirect } from '@sveltejs/kit';
 import { SPOTIFY_CLIENT_ID, SPOTIFY_REDIRECT_URI } from '$env/static/private';
+import type { RequestHandler } from '@sveltejs/kit';
 
-export const GET = async ({ cookies }) => {
+export const GET: RequestHandler = async ({ cookies }) => {
 	const scope = 'user-read-email user-read-private user-top-read';
 	const state = crypto.randomUUID();
 

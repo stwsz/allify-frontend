@@ -4,8 +4,9 @@ import {
 	SPOTIFY_CLIENT_SECRET,
 	SPOTIFY_REDIRECT_URI
 } from '$env/static/private';
+import type { RequestHandler } from '@sveltejs/kit';
 
-export const GET = async ({ url, cookies }) => {
+export const GET: RequestHandler = async ({ url, cookies }) => {
 	const code = url.searchParams.get('code');
 	const state = url.searchParams.get('state');
 	const savedState = cookies.get('spotify_state');

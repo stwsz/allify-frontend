@@ -5,11 +5,20 @@
 	// Assets
 	import CrownIcon from '$lib/assets/images/icons/CrownIcon.svelte';
 
+	// Props
 	export let topArtistItem: any;
+	export let choosedItemType: 'artist' | 'track' | 'album' | '';
+	export let itemId: string;
+	export let showDetailedInfoModalVisible: boolean;
 </script>
 
 <button
-	class="relative flex w-full max-w-md flex-col gap-4 rounded-lg bg-s-muted/90 p-4 transition-all cursor-pointer sm:w-auto sm:max-w-none sm:flex-row sm:gap-6 sm:p-6 lg:p-8 hover:scale-102"
+	class="relative flex w-full max-w-md cursor-pointer flex-col gap-4 rounded-lg bg-s-muted/90 p-4 transition-all hover:scale-102 sm:w-auto sm:max-w-none sm:flex-row sm:gap-6 sm:p-6 lg:p-8"
+	on:click={() => {
+		choosedItemType = 'artist';
+		itemId = topArtistItem.id;
+		showDetailedInfoModalVisible = true;
+	}}
 >
 	<div class="relative">
 		<CrownIcon
@@ -39,7 +48,9 @@
 				1{$translationsStore.myMusicalProfilePage.myMusicalProfilePageMostListenedItemPlace}
 			</h3>
 
-			<p class="w-full text-xl leading-tight font-bold text-t-primary sm:text-2xl lg:text-3xl xl:text-4xl">
+			<p
+				class="w-full text-xl leading-tight font-bold text-t-primary sm:text-2xl lg:text-3xl xl:text-4xl"
+			>
 				{topArtistItem.name}
 			</p>
 

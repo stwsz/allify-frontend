@@ -91,5 +91,8 @@ export const pt = {
 		myMusicalProfilePageMostListenedArtistsFollowers: 'seguidores',
 		myMusicalProfilePageMostListenedTracksHeading1: 'Suas músicas favoritas',
 		myMusicalProfilePageMostListenedItemPlace: 'º lugar',
+		myMusicalProfilePageDetailedArtistInfoModalPopularity: 'Popularidade',
+		myMusicalProfilePageDetailedArtistInfoModalGenre: 'Gêneros',
+		myMusicalProfilePageDetailedTracksInfoModalPopularity: 'Popularidade'
 	}
 };
