@@ -1,5 +1,6 @@
 export const en = {
 	language: 'en',
+	locale: 'en-US',
 	configuration: {
 		langAttribute: 'en_US',
 		metaOgAndTwitterContent: 'Understand your music habits with real data.',
@@ -91,5 +92,8 @@ export const en = {
 		myMusicalProfilePageMostListenedArtistsFollowers: 'followers',
 		myMusicalProfilePageMostListenedTracksHeading1: 'Your favorite tracks',
 		myMusicalProfilePageMostListenedItemPlace: 'th place',
+		myMusicalProfilePageDetailedArtistInfoModalPopularity: 'Popularity',
+		myMusicalProfilePageDetailedArtistInfoModalGenre: 'Genres',
+		myMusicalProfilePageDetailedTracksInfoModalPopularity: 'Popularity'
 	}
 };

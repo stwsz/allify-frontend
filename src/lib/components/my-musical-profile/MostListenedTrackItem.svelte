@@ -2,12 +2,21 @@
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
 
+	// Props
 	export let mostListenedTrackItem: any;
 	export let index: number;
+	export let choosedItemType: 'artist' | 'track' | 'album' | '';
+	export let itemId: string;
+	export let showDetailedInfoModalVisible: boolean;
 </script>
 
 <button
-	class="flex w-64 flex-col items-center gap-3 rounded-lg bg-s-muted/90 p-4 transition-all cursor-pointer sm:w-80 sm:flex-row sm:items-start sm:gap-4 sm:p-6 lg:w-96 lg:p-8 xl:w-130 hover:scale-102"
+	class="flex w-64 cursor-pointer flex-col items-center gap-3 rounded-lg bg-s-muted/90 p-4 transition-all hover:scale-102 sm:w-80 sm:flex-row sm:items-start sm:gap-4 sm:p-6 lg:w-96 lg:p-8 xl:w-130"
+	on:click={() => {
+		choosedItemType = 'track';
+		itemId = mostListenedTrackItem.id;
+		showDetailedInfoModalVisible = true;
+	}}
 >
 	<picture class="shrink-0">
 		<img
@@ -24,14 +33,16 @@
 		/>
 	</picture>
 
-	<div class="w-full min-w-0 flex-1 flex flex-col gap-1 text-center sm:text-left lg:gap-2">
+	<div class="flex w-full min-w-0 flex-1 flex-col gap-1 text-center sm:text-left lg:gap-2">
 		<div class="flex flex-col items-center gap-1 sm:items-start">
 			<h3 class="text-xs font-semibold tracking-wide text-t-secondary uppercase sm:text-sm">
 				{index + 2}{$translationsStore.myMusicalProfilePage
 					.myMusicalProfilePageMostListenedItemPlace}
 			</h3>
 
-			<p class="w-full text-base leading-tight font-bold text-t-primary sm:text-lg lg:text-xl xl:text-2xl">
+			<p
+				class="w-full text-base leading-tight font-bold text-t-primary sm:text-lg lg:text-xl xl:text-2xl"
+			>
 				{mostListenedTrackItem.name}
 			</p>
 
@@ -42,9 +53,13 @@
 			</p>
 		</div>
 
-		<div class="flex flex-col items-center gap-0.5 text-xs text-t-secondary/70 sm:items-start sm:text-sm">
+		<div
+			class="flex flex-col items-center gap-0.5 text-xs text-t-secondary/70 sm:items-start sm:text-sm"
+		>
 			<span class="font-medium">{mostListenedTrackItem.album.name}</span>
-			<span class="text-[10px] text-t-secondary/60 sm:text-xs">{mostListenedTrackItem.album.release_date}</span>
+			<span class="text-[10px] text-t-secondary/60 sm:text-xs"
+				>{mostListenedTrackItem.album.release_date}</span
+			>
 		</div>
 	</div>
 </button>

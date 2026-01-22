@@ -1,7 +1,8 @@
 import { json, redirect } from '@sveltejs/kit';
 import { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET } from '$env/static/private';
+import type { RequestHandler } from '@sveltejs/kit';
 
-export const POST = async ({ cookies }) => {
+export const POST: RequestHandler = async ({ cookies }) => {
 	const refresh_token = cookies.get('spotify_refresh_token');
 
 	if (!refresh_token) {
