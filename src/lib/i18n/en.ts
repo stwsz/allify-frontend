@@ -94,6 +94,8 @@ export const en = {
 		myMusicalProfilePageMostListenedItemPlace: 'th place',
 		myMusicalProfilePageDetailedArtistInfoModalPopularity: 'Popularity',
 		myMusicalProfilePageDetailedArtistInfoModalGenre: 'Genres',
-		myMusicalProfilePageDetailedTracksInfoModalPopularity: 'Popularity'
+		myMusicalProfilePageDetailedTracksInfoModalPopularity: 'Popularity',
+		myMusicalProfilePageDetailedItemInfoModalExternalLinkArtistText: 'Open artist on Spotify',
+		myMusicalProfilePageDetailedItemInfoModalExternalLinkTrackText: 'Open track on Spotify'
 	}
 };
