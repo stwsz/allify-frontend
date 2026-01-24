@@ -87,6 +87,8 @@
 					hover:bg-status-error/80
 				"
 			on:click={() => {
+				localStorage.removeItem('mostListenedArtists');
+				localStorage.removeItem('mostListenedTracks');
 				showProfileOptions = false;
 				meStore.set(undefined);
 			}}

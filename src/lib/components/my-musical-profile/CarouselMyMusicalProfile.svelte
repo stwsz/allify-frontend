@@ -43,6 +43,11 @@
 			const resMostListenedItems = await reqMostListenedItems.json();
 			mostListenedItems = resMostListenedItems;
 			topListened = mostListenedItems[0];
+
+			sessionStorage.setItem(
+				`mostListened${mostListenedType.charAt(0).toUpperCase() + mostListenedType.slice(1)}`,
+				JSON.stringify(mostListenedItems)
+			);
 		} catch (error) {
 			console.error('Error fetching most listened artists:', error);
 		}
@@ -77,7 +82,16 @@
 	}
 
 	onMount(() => {
-		fetchMostListenedItems();
+		const mostListenedItemsFromStorage = sessionStorage.getItem(
+			`mostListened${mostListenedType.charAt(0).toUpperCase() + mostListenedType.slice(1)}`
+		);
+
+		if (mostListenedItemsFromStorage) {
+			mostListenedItems = JSON.parse(mostListenedItemsFromStorage);
+			topListened = mostListenedItems[0];
+		} else {
+			fetchMostListenedItems();
+		}
 
 		if (carousel) {
 			updateButtonVisibility();

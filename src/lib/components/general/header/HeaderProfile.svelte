@@ -47,8 +47,8 @@
 	{#if loggedIn}
 		<img
 			class={`
-				h-${$meStore?.images[1]?.height}
-				w-${$meStore?.images[1]?.width}
+				h-${$meStore?.images[0]?.height}
+				w-${$meStore?.images[0]?.width}
 				rounded-full
 				border
 				object-cover
