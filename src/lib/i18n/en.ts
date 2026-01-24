@@ -55,7 +55,14 @@ export const en = {
 			'Fetching your information from <span class="font-semibold text-[#1fd25e]">Spotify</span>',
 		loadingComponentDeezerParagraph1:
 			'Fetching your information from <span class="font-semibold text-[#a238ff]">Deezer</span>',
-		loadingComponentAriaLabel: 'Loading animation'
+		loadingComponentAriaLabel: 'Loading animation',
+		NotLoggedHeading1: 'You are not logged in',
+		NotLoggedMyMusicProfileParagraph1:
+			'To access your music profile, connect with one of your favorite streaming platforms.',
+		NotLoggedDiscoveriesParagraph1: 'To access music discoveries, connect with one of your favorite streaming platforms.',
+		NotLoggedMusicBattlesParagraph1: 'To access music battles, connect with one of your favorite streaming platforms.',
+		NotLoggedLoginLinkSpotify: 'Log in with Spotify',
+		NotLoggedLoginLinkDeezer: 'Log in with Deezer'
 	},
 	homePage: {
 		title: 'All about your music, connected in one place | Allify',

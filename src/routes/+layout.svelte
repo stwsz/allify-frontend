@@ -9,7 +9,7 @@
 	// Components
 	import Header from '$lib/components/general/header/Header.svelte';
 	import Footer from '$lib/components/general/footer/Footer.svelte';
-	import AfterConnectionLoading from '$lib/components/general/loading/LoadingAfterConnection.svelte';
+	import LoadingAfterConnection from '$lib/components/general/LoadingAfterConnection.svelte';
 
 	// Stores
 	import { meStore } from '$lib/stores/me.store';
@@ -55,7 +55,7 @@
 
 <Footer />
 
-<AfterConnectionLoading
+<LoadingAfterConnection
 	loading={$loadingAfterConnectionStore.loading}
 	streamingPlatform={$loadingAfterConnectionStore.streamingPlatform}
 />
