@@ -33,13 +33,16 @@
 		/>
 	</picture>
 
-	<div class="flex min-w-0 flex-1 flex-col justify-center gap-1.5 text-center sm:gap-2 sm:text-left">
+	<div
+		class="flex min-w-0 flex-1 flex-col justify-center gap-1.5 text-center sm:gap-2 sm:text-left"
+	>
 		<div class="flex flex-col gap-1 sm:gap-1.5">
-			<h3 class="text-xs font-semibold uppercase tracking-wide text-t-secondary">
-				{index + 2}{$translationsStore.myMusicalProfilePage.myMusicalProfilePageMostListenedItemPlace}
+			<h3 class="text-xs font-semibold tracking-wide text-t-secondary uppercase">
+				{index + 2}{$translationsStore.myMusicalProfilePage
+					.myMusicalProfilePageMostListenedItemPlace}
 			</h3>
 
-			<p class="line-clamp-1 text-lg font-bold leading-tight text-t-primary sm:text-xl">
+			<p class="line-clamp-1 text-lg leading-tight font-bold text-t-primary sm:text-xl">
 				{mostListenedTrackItem.name}
 			</p>
 

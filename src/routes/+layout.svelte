@@ -23,12 +23,13 @@
 				credentials: 'include'
 			});
 
-			if (!response.ok) {
+			const data = await response.json();
+
+			if (data.error) {
 				meStore.set(undefined);
 				return;
 			}
-
-			const data = await response.json();
+			
 			meStore.set({ ...data, streaming: 'spotify' });
 		} catch {
 			meStore.set(undefined);
