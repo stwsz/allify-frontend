@@ -163,7 +163,8 @@
 					<ExternalLink
 						streamingPlatform="spotify"
 						externalLink={detailedArtistInfoItem?.external_urls?.spotify}
-						externalLinkText={$translationsStore.myMusicalProfilePage.myMusicalProfilePageDetailedItemInfoModalExternalLinkArtistText}
+						externalLinkText={$translationsStore.myMusicalProfilePage
+							.myMusicalProfilePageDetailedItemInfoModalExternalLinkArtistText}
 					/>
 				</div>
 			{:else if choosedItemType === 'track' && detailedTrackInfoItem !== null}
@@ -215,11 +216,12 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<ExternalLink
 						streamingPlatform="spotify"
 						externalLink={detailedTrackInfoItem?.external_urls?.spotify}
-						externalLinkText={$translationsStore.myMusicalProfilePage.myMusicalProfilePageDetailedItemInfoModalExternalLinkTrackText}
+						externalLinkText={$translationsStore.myMusicalProfilePage
+							.myMusicalProfilePageDetailedItemInfoModalExternalLinkTrackText}
 					/>
 				</div>
 			{/if}

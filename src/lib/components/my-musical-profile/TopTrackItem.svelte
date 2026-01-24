@@ -42,13 +42,17 @@
 		</picture>
 	</div>
 
-	<div class="flex min-w-0 flex-1 flex-col justify-center gap-2 text-center sm:gap-2.5 sm:text-left lg:gap-3">
+	<div
+		class="flex min-w-0 flex-1 flex-col justify-center gap-2 text-center sm:gap-2.5 sm:text-left lg:gap-3"
+	>
 		<div class="flex flex-col gap-1 sm:gap-1.5 lg:gap-2">
-			<h3 class="text-xs font-semibold uppercase tracking-wide text-t-secondary sm:text-sm">
+			<h3 class="text-xs font-semibold tracking-wide text-t-secondary uppercase sm:text-sm">
 				1{$translationsStore.myMusicalProfilePage.myMusicalProfilePageMostListenedItemPlace}
 			</h3>
 
-			<p class="line-clamp-2 text-xl font-bold leading-tight text-t-primary sm:text-2xl lg:text-3xl">
+			<p
+				class="line-clamp-2 text-xl leading-tight font-bold text-t-primary sm:text-2xl lg:text-3xl"
+			>
 				{topTrackItem.name}
 			</p>
 

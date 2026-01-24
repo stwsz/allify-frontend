@@ -86,9 +86,15 @@
 					transition-all
 					hover:bg-status-error/80
 				"
-			on:click={() => {
-				localStorage.removeItem('mostListenedArtists');
-				localStorage.removeItem('mostListenedTracks');
+			on:click={async () => {
+				sessionStorage.removeItem('mostListenedArtists');
+				sessionStorage.removeItem('mostListenedTracks');
+
+				await fetch('/api/logout', {
+					method: 'POST',
+					credentials: 'include'
+				});
+
 				showProfileOptions = false;
 				meStore.set(undefined);
 			}}

@@ -4,7 +4,7 @@ export const GET = async ({ cookies, fetch }) => {
 	let token = cookies.get('spotify_access_token');
 
 	if (!token) {
-		throw redirect(302, '/login');
+		return json({ error: 'No access token' });
 	}
 
 	let res = await fetch('https://api.spotify.com/v1/me', {
