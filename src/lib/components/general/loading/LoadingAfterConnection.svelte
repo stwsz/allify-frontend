@@ -22,7 +22,7 @@
 			<div class="relative">
 				{#if streamingPlatform === 'spotify'}
 					<div class="relative transform transition-transform hover:scale-110">
-						<SpotifyIcon iconSvgClass="w-20 h-20" />
+						<SpotifyIcon iconSvgClass="w-20 h-20 text-[#1fd25e]" />
 					</div>
 				{:else if streamingPlatform === 'deezer'}
 					<div class="relative transform transition-transform hover:scale-110">

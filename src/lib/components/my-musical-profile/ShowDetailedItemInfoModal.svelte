@@ -1,12 +1,14 @@
 <script lang="ts">
 	// Components
 	import DotsLoading from '$lib/assets/images/animations/DotsLoading.svelte';
+	import ExternalLink from './ExternalLink.svelte';
 
 	// Assets
 	import CloseIcon from '$lib/assets/images/icons/CloseIcon.svelte';
 
 	// Stores
 	import { translationsStore } from '$lib/stores/translations.store';
+	import { meStore } from '$lib/stores/me.store';
 
 	// Types
 	import type { DetailedArtistItem, DetailedTrackItem } from '$lib/types/detailedItem.type';
@@ -15,7 +17,7 @@
 	export let choosedItemType: 'artist' | 'track' | 'album' | '';
 	export let itemId: string;
 	export let showDetailedInfoModalVisible: boolean;
-    
+
 	let lastItemId: string | null = null;
 	let loading = false;
 
@@ -36,6 +38,10 @@
 
 			if (choosedItemType === 'artist') detailedArtistInfoItem = res;
 			else if (choosedItemType === 'track') detailedTrackInfoItem = res;
+
+			console.log('Detailed Info Item:', res);
+		} catch (error) {
+			console.error('Error fetching detailed info item:', error);
 		} finally {
 			loading = false;
 		}
@@ -153,6 +159,12 @@
 							{/if}
 						</div>
 					</div>
+
+					<ExternalLink
+						streamingPlatform="spotify"
+						externalLink={detailedArtistInfoItem?.external_urls?.spotify}
+						externalLinkText={$translationsStore.myMusicalProfilePage.myMusicalProfilePageDetailedItemInfoModalExternalLinkArtistText}
+					/>
 				</div>
 			{:else if choosedItemType === 'track' && detailedTrackInfoItem !== null}
 				<div class="flex flex-col gap-6">
@@ -203,6 +215,12 @@
 							</div>
 						</div>
 					</div>
+					
+					<ExternalLink
+						streamingPlatform="spotify"
+						externalLink={detailedTrackInfoItem?.external_urls?.spotify}
+						externalLinkText={$translationsStore.myMusicalProfilePage.myMusicalProfilePageDetailedItemInfoModalExternalLinkTrackText}
+					/>
 				</div>
 			{/if}
 		</div>
