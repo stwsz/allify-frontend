@@ -3,7 +3,7 @@
 	import { translationsStore } from '$lib/stores/translations.store';
 
 	// Props
-	export let iconSvgClass: string = 'w-10 h-10';
+	export let iconSvgClass: string;
 	export let iconAltText: string = $translationsStore.homePage.connectPlatformDeezerAltText;
 </script>
 
@@ -14,11 +14,12 @@
 	class={iconSvgClass}
 	aria-label={iconAltText}
 	role="img"
+	fill="currentColor"
 >
 	<title>{iconAltText}</title>
 	<g
 		transform="translate(0.000000,1544.000000) scale(0.100000,-0.100000)"
-		fill="#a339ff"
+		fill="currentColor"
 		stroke="none"
 	>
 		<path

@@ -22,7 +22,7 @@
 >
 	<div class="flex flex-col gap-4 p-6 lg:gap-6 lg:p-10">
 		<div class="flex items-center justify-between font-medium">
-			<svelte:component this={platform.icon} />
+			<platform.icon iconSvgClass={`w-10 h-10 ${platformKey === 'spotify' ? 'text-[#1fd25e]' : 'text-[#a339ff]'}`} />
 
 			<button
 				on:click={(e) => {

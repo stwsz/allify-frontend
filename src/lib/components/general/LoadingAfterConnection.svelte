@@ -26,7 +26,7 @@
 					</div>
 				{:else if streamingPlatform === 'deezer'}
 					<div class="relative transform transition-transform hover:scale-110">
-						<DeezerIcon iconSvgClass="w-20 h-20" />
+						<DeezerIcon iconSvgClass="w-20 h-20 text-[#a339ff]" />
 					</div>
 				{/if}
 			</div>

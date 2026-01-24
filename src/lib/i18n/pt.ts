@@ -55,7 +55,14 @@ export const pt = {
 			'Buscando suas informações do <span class="font-semibold text-[#1fd25e]">Spotify</span>',
 		loadingComponentDeezerParagraph1:
 			'Buscando suas informações do <span class="font-semibold text-[#a238ff]">Deezer</span>',
-		loadingComponentAriaLabel: 'Animação de carregamento'
+		loadingComponentAriaLabel: 'Animação de carregamento',
+		NotLoggedHeading1: 'Você não está logado',
+		NotLoggedMyMusicProfileParagraph1:
+			'Para acessar seu perfil musical, conecte-se com uma de suas plataformas de streaming favoritas.',
+		NotLoggedDiscoveriesParagraph1: 'Para acessar as descobertas musicais, conecte-se com uma de suas plataformas de streaming favoritas.',
+		NotLoggedMusicBattlesParagraph1: 'Para acessar as batalhas de música, conecte-se com uma de suas plataformas de streaming favoritas.',
+		NotLoggedLoginLinkSpotify: 'Fazer login com Spotify',
+		NotLoggedLoginLinkDeezer: 'Fazer login com Deezer'
 	},
 	homePage: {
 		title: 'Tudo sobre sua música, conectado em um só lugar | Allify',
