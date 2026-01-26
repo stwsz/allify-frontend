@@ -38,7 +38,6 @@
         <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-6">
             {#each streamings as streaming}
                 <a
-                    target="_blank"
                     href={streaming.href}
                     rel="noopener noreferrer"
                     class={`inline-flex items-center justify-center gap-2 rounded-xl
@@ -46,7 +45,7 @@
                                             shadow-md transition-all duration-200
                                             hover:scale-[1.02] ${streaming.name === 'spotify' ? 'hover:bg-[#1ed760]' : 'hover:bg-[#a339ff]'}`}
                 >
-                    <streaming.icon iconSvgClass="w-7.5 h-7.5 text-t-inverse" />
+                    <streaming.icon iconSvgClass="w-6.5 h-6.5 text-t-inverse" />
 
                     {streaming.buttonText}
                 </a>
