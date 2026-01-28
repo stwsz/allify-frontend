@@ -34,6 +34,6 @@
 		<ShowDetailedItemInfoModal bind:choosedItemType bind:itemId bind:showDetailedInfoModalVisible />
 	{/if}
 {:else}
-	<NotLogged notLoggedParagraph={$translationsStore.generalTexts.NotLoggedMyMusicProfileParagraph1} />
+	<NotLogged notLoggedParagraph={$translationsStore.generalTexts.notLoggedMyMusicProfileParagraph1} />
 {/if}
 

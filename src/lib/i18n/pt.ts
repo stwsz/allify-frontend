@@ -30,7 +30,7 @@ export const pt = {
 		profileNotLoggedItem1:
 			'Entrar com <span class="ml-1 font-semibold text-[#1fd25e]">Spotify</span>',
 		profileNotLoggedItem2:
-			'Entrar com <span class="ml-1 font-semibold text-[#a238ff]">Deezer</span>',
+			'Entrar com <span class="ml-1 font-semibold text-s-inverse-muted">Deezer</span>',
 		burguerMenuAltText: 'Abrir menu de navegação',
 		closeMenuAltText: 'Fechar menu de navegação',
 		cardProfileAsideMenuParagraph1: 'Entrar ou criar conta',
@@ -56,13 +56,15 @@ export const pt = {
 		loadingComponentDeezerParagraph1:
 			'Buscando suas informações do <span class="font-semibold text-[#a238ff]">Deezer</span>',
 		loadingComponentAriaLabel: 'Animação de carregamento',
-		NotLoggedHeading1: 'Você não está logado',
-		NotLoggedMyMusicProfileParagraph1:
+		notLoggedHeading1: 'Você não está logado',
+		notLoggedMyMusicProfileParagraph1:
 			'Para acessar seu perfil musical, conecte-se com uma de suas plataformas de streaming favoritas.',
-		NotLoggedDiscoveriesParagraph1: 'Para acessar as descobertas musicais, conecte-se com uma de suas plataformas de streaming favoritas.',
-		NotLoggedMusicBattlesParagraph1: 'Para acessar as batalhas de música, conecte-se com uma de suas plataformas de streaming favoritas.',
-		NotLoggedLoginLinkSpotify: 'Fazer login com Spotify',
-		NotLoggedLoginLinkDeezer: 'Fazer login com Deezer'
+		notLoggedDiscoveriesParagraph1: 'Para acessar as descobertas musicais, conecte-se com uma de suas plataformas de streaming favoritas.',
+		notLoggedMusicBattlesParagraph1: 'Para acessar as batalhas de música, conecte-se com uma de suas plataformas de streaming favoritas.',
+		notLoggedLoginLinkSpotify: 'Fazer login com Spotify',
+		notLoggedLoginLinkDeezer: 'Fazer login com Deezer',
+		disabledDeezerFunctionalityText: 'Conexão com Deezer atualmente indisponível',
+		loginWith: 'Faça login com '
 	},
 	homePage: {
 		title: 'Tudo sobre sua música, conectado em um só lugar | Allify',
@@ -103,6 +105,6 @@ export const pt = {
 		myMusicalProfilePageDetailedArtistInfoModalGenre: 'Gêneros',
 		myMusicalProfilePageDetailedTracksInfoModalPopularity: 'Popularidade',
 		myMusicalProfilePageDetailedItemInfoModalExternalLinkArtistText: 'Abrir artista no Spotify',
-		myMusicalProfilePageDetailedItemInfoModalExternalLinkTrackText: 'Abrir música no Spotify'
+		myMusicalProfilePageDetailedItemInfoModalExternalLinkTrackText: 'Abrir música no Spotify',
 	}
 };

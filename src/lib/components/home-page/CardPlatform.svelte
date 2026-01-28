@@ -22,7 +22,7 @@
 >
 	<div class="flex flex-col gap-4 p-6 lg:gap-6 lg:p-10">
 		<div class="flex items-center justify-between font-medium">
-			<platform.icon iconSvgClass={`w-10 h-10 ${platformKey === 'spotify' ? 'text-[#1fd25e]' : 'text-[#a339ff]'}`} />
+			<platform.icon iconSvgClass={`w-10 h-10 ${platformKey === 'spotify' ? 'text-[#1fd25e]' : 'text-s-inverse-muted'}`} />
 
 			<button
 				on:click={(e) => {
@@ -38,14 +38,16 @@
 						streamingPlatform: platformKey as 'spotify' | 'deezer'
 					});
 				}}
+				disabled={platformKey === 'deezer'}
+				title={platformKey === 'deezer' ? $translationsStore.generalTexts.disabledDeezerFunctionalityText : $translationsStore.generalTexts.loginWith + platformKey.charAt(0).toUpperCase() + platformKey.slice(1)}
 				class={`flex cursor-pointer items-center gap-1 rounded-lg border px-3 py-1.5 text-sm transition-all ${
 					$meStore?.streaming === platformKey
 						? platformKey === 'spotify'
 							? 'border-[#1fd25e] text-[#1fd25e] hover:border-[#1fd25e] hover:text-[#1fd25e]'
-							: 'border-[#a238ff] text-[#a238ff] hover:border-[#a238ff] hover:text-[#a238ff]'
+							: 'border-s-inverse-muted text-s-inverse-muted hover:border-s-inverse-muted hover:text-s-inverse-muted'
 						: platformKey === 'spotify'
 							? 'border-b-muted text-t-primary hover:border-[#1fd25e] hover:text-[#1fd25e]'
-							: 'border-b-muted text-t-primary hover:border-[#a238ff] hover:text-[#a238ff]'
+							: 'border-b-muted text-t-primary hover:border-s-inverse-muted hover:text-s-inverse-muted'
 				}`}
 				aria-label={$meStore?.streaming === platformKey
 					? $translationsStore.homePage.connectPlatformCardPlatformConnectedButtonAriaLabel

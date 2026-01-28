@@ -14,13 +14,13 @@
             icon: SpotifyIcon,
             name: 'spotify',
             href: '/api/spotify/auth/login',
-            buttonText: $translationsStore.generalTexts.NotLoggedLoginLinkSpotify
+            buttonText: $translationsStore.generalTexts.notLoggedLoginLinkSpotify
         },
         {
             icon: DeezerIcon,
             name: 'deezer',
             href: '/',
-            buttonText: $translationsStore.generalTexts.NotLoggedLoginLinkDeezer
+            buttonText: $translationsStore.generalTexts.notLoggedLoginLinkDeezer
         }
     ];
 </script>
@@ -29,7 +29,7 @@
 	<div class="flex flex-col items-center justify-center gap-6 rounded-lg bg-surface-secondary px-6 py-12 text-center sm:px-8 sm:py-16 lg:px-12 lg:py-20">
 		<div class="max-w-lg">
 			<h2 class="mb-3 text-2xl font-medium text-t-primary sm:text-3xl lg:text-4xl">
-				{$translationsStore.generalTexts.NotLoggedHeading1}
+				{$translationsStore.generalTexts.notLoggedHeading1}
 			</h2>
 			<p class="text-base text-t-secondary mt-7 sm:text-lg">
 				{notLoggedParagraph}
@@ -46,10 +46,12 @@
                         });
                         window.location.href = streaming.href;
                     }}
+                    disabled={streaming.name === 'deezer'}
+                    title={streaming.name === 'deezer' ? $translationsStore.generalTexts.disabledDeezerFunctionalityText : $translationsStore.generalTexts.loginWith + streaming.name.charAt(0).toUpperCase() + streaming.name.slice(1)}
                     class={`inline-flex items-center cursor-pointer justify-center gap-2 rounded-xl
-                                            ${streaming.name === 'spotify' ? 'bg-[#1fd25e]' : 'bg-[#a339ff]'} px-6 py-3.5 text-sm font-semibold text-t-inverse
+                                            ${streaming.name === 'spotify' ? 'bg-[#1fd25e]' : 'bg-s-inverse-muted'} px-6 py-3.5 text-sm font-semibold text-t-inverse
                                             shadow-md transition-all duration-200
-                                            hover:scale-[1.02] ${streaming.name === 'spotify' ? 'hover:bg-[#1ed760]' : 'hover:bg-[#a339ff]'}`}
+                                            hover:scale-[1.02] ${streaming.name === 'spotify' ? 'hover:bg-[#1ed760]/90' : 'hover:bg-s-inverse-muted/90'}`}
                 >
                     <streaming.icon iconSvgClass="w-6.5 h-6.5 text-t-inverse" />
 

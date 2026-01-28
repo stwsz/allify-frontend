@@ -56,13 +56,15 @@ export const de = {
 		loadingComponentDeezerParagraph1:
 			'Suche deine Informationen von <span class="font-semibold text-[#a238ff]">Deezer</span>',
 		loadingComponentAriaLabel: 'Ladeanimation',
-		NotLoggedHeading1: 'Sie sind nicht angemeldet',
-		NotLoggedMyMusicProfileParagraph1:
+		notLoggedHeading1: 'Sie sind nicht angemeldet',
+		notLoggedMyMusicProfileParagraph1:
 			'Um auf Ihr Musikprofil zuzugreifen, verbinden Sie sich mit einer Ihrer bevorzugten Streaming-Plattformen.',
-		NotLoggedDiscoveriesParagraph1: 'Um auf Musikentdeckungen zuzugreifen, verbinden Sie sich mit einer Ihrer bevorzugten Streaming-Plattformen.',
-		NotLoggedMusicBattlesParagraph1: 'Um auf Musikschlachten zuzugreifen, verbinden Sie sich mit einer Ihrer bevorzugten Streaming-Plattformen.',
-		NotLoggedLoginLinkSpotify: 'Mit Spotify anmelden',
-		NotLoggedLoginLinkDeezer: 'Mit Deezer anmelden'
+		notLoggedDiscoveriesParagraph1: 'Um auf Musikentdeckungen zuzugreifen, verbinden Sie sich mit einer Ihrer bevorzugten Streaming-Plattformen.',
+		notLoggedMusicBattlesParagraph1: 'Um auf Musikschlachten zuzugreifen, verbinden Sie sich mit einer Ihrer bevorzugten Streaming-Plattformen.',
+		notLoggedLoginLinkSpotify: 'Mit Spotify anmelden',
+		notLoggedLoginLinkDeezer: 'Mit Deezer anmelden',
+		disabledDeezerFunctionalityText: 'Deezer-Verbindung derzeit nicht verfügbar',
+		loginWith: 'Anmelden mit '
 	},
 	homePage: {
 		title: 'Alles über deine Musik, an einem Ort verbunden | Allify',
