@@ -106,6 +106,8 @@
 			{#each notLoggedItems as item}
 				<li class="rounded-lg transition-all hover:bg-s-muted">
 					<button
+						disabled={item.streaming === 'deezer'}
+						title={item.streaming === 'deezer' ? $translationsStore.generalTexts.disabledDeezerFunctionalityText : $translationsStore.generalTexts.loginWith + item.streaming.charAt(0).toUpperCase() + item.streaming.slice(1)}
 						on:click={(e) => {
 							if ($meStore !== undefined) {
 								e.preventDefault();
