@@ -5,6 +5,7 @@
 	
     // Stores
     import { translationsStore } from '$lib/stores/translations.store';
+    import { loadingAfterConnectionStore } from '$lib/stores/loadingAfterConnection.store';
 
     export let notLoggedParagraph: string;
 
@@ -37,10 +38,15 @@
 
         <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-6">
             {#each streamings as streaming}
-                <a
-                    href={streaming.href}
-                    rel="noopener noreferrer"
-                    class={`inline-flex items-center justify-center gap-2 rounded-xl
+                <button
+                    on:click={() => {
+                        loadingAfterConnectionStore.set({
+                            loading: true,
+                            streamingPlatform: streaming.name as 'spotify' | 'deezer'
+                        });
+                        window.location.href = streaming.href;
+                    }}
+                    class={`inline-flex items-center cursor-pointer justify-center gap-2 rounded-xl
                                             ${streaming.name === 'spotify' ? 'bg-[#1fd25e]' : 'bg-[#a339ff]'} px-6 py-3.5 text-sm font-semibold text-t-inverse
                                             shadow-md transition-all duration-200
                                             hover:scale-[1.02] ${streaming.name === 'spotify' ? 'hover:bg-[#1ed760]' : 'hover:bg-[#a339ff]'}`}
@@ -48,7 +54,7 @@
                     <streaming.icon iconSvgClass="w-6.5 h-6.5 text-t-inverse" />
 
                     {streaming.buttonText}
-                </a>
+                </button>
             {/each}
         </div>
 	</div>
